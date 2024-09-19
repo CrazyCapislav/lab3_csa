@@ -112,6 +112,7 @@
 
 ## Транслятор
 Реализован в [translator](./translator.py)
+
 Интерфейс командной строки: `.\translator.py <input_file> <target_file>`
 
 Этапы трансляции:
