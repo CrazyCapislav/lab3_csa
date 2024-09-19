@@ -1,0 +1,1904 @@
+in_source: |
+  {   
+      string username = input();
+      print("Hello, ");
+      print(username);
+  }
+in_stdin: |
+  rahim.
+out_ast: |
+  Program:
+    Assign(var=username, var_type=STRING_TYPE)
+      FunctionCall(input)
+    Print:
+      String("Hello, ")
+    Print:
+      Identifier(username)
+out_stdout: |
+  Output: Hello, rahim
+out_code: |-
+  {
+      "labels": [
+          {
+              "label": "username",
+              "address": 0,
+              "type": "string"
+          },
+          {
+              "label": "START_PRINT_0"
+          },
+          {
+              "label": "END_PRINT_0"
+          },
+          {
+              "label": "PRINT_LOOP_0"
+          },
+          {
+              "label": "STR_ADR_1",
+              "address": 1,
+              "value": "Hello, ",
+              "type": "string"
+          },
+          {
+              "label": "START_PRINT_1"
+          },
+          {
+              "label": "END_PRINT_1"
+          },
+          {
+              "label": "PRINT_LOOP_2"
+          }
+      ],
+      "program_code": [
+          {
+              "label": "START_INPUT_0"
+          },
+          {
+              "opcode": "ld",
+              "operand": "username",
+              "addr_mode": "direct"
+          },
+          {
+              "opcode": "st",
+              "operand": "CUR_ADR",
+              "addr_mode": "direct"
+          },
+          {
+              "label": "INPUT_LOOP_0"
+          },
+          {
+              "opcode": "ld",
+              "operand": "IN_ADR",
+              "addr_mode": "indirect"
+          },
+          {
+              "opcode": "cmp",
+              "operand": ".",
+              "addr_mode": "immediate"
+          },
+          {
+              "opcode": "je",
+              "operand": "END_INPUT_0"
+          },
+          {
+              "opcode": "st",
+              "operand": "CUR_ADR",
+              "addr_mode": "indirect"
+          },
+          {
+              "opcode": "ld",
+              "operand": "CUR_ADR",
+              "addr_mode": "direct"
+          },
+          {
+              "opcode": "inc"
+          },
+          {
+              "opcode": "st",
+              "operand": "CUR_ADR",
+              "addr_mode": "direct"
+          },
+          {
+              "opcode": "jmp",
+              "operand": "INPUT_LOOP_0"
+          },
+          {
+              "label": "END_INPUT_0"
+          },
+          {
+              "label": "START_PRINT_0"
+          },
+          {
+              "opcode": "ld",
+              "operand": "STR_ADR_1",
+              "addr_mode": "direct"
+          },
+          {
+              "opcode": "st",
+              "operand": "CUR_ADR",
+              "addr_mode": "direct"
+          },
+          {
+              "label": "PRINT_LOOP_0"
+          },
+          {
+              "opcode": "ld",
+              "operand": "CUR_ADR",
+              "addr_mode": "indirect"
+          },
+          {
+              "opcode": "cmp",
+              "operand": "\u0000",
+              "addr_mode": "immediate"
+          },
+          {
+              "opcode": "je",
+              "operand": "END_PRINT_0"
+          },
+          {
+              "opcode": "st",
+              "operand": "OUT_ADR",
+              "addr_mode": "direct"
+          },
+          {
+              "opcode": "ld",
+              "operand": "CUR_ADR",
+              "addr_mode": "direct"
+          },
+          {
+              "opcode": "inc"
+          },
+          {
+              "opcode": "st",
+              "operand": "CUR_ADR",
+              "addr_mode": "direct"
+          },
+          {
+              "opcode": "jmp",
+              "operand": "PRINT_LOOP_0"
+          },
+          {
+              "label": "END_PRINT_0"
+          },
+          {
+              "label": "START_PRINT_1"
+          },
+          {
+              "opcode": "ld",
+              "operand": "username",
+              "addr_mode": "direct"
+          },
+          {
+              "opcode": "st",
+              "operand": "CUR_ADR",
+              "addr_mode": "direct"
+          },
+          {
+              "label": "PRINT_LOOP_2"
+          },
+          {
+              "opcode": "ld",
+              "operand": "CUR_ADR",
+              "addr_mode": "indirect"
+          },
+          {
+              "opcode": "cmp",
+              "operand": "\u0000",
+              "addr_mode": "immediate"
+          },
+          {
+              "opcode": "je",
+              "operand": "END_PRINT_1"
+          },
+          {
+              "opcode": "st",
+              "operand": "OUT_ADR",
+              "addr_mode": "direct"
+          },
+          {
+              "opcode": "ld",
+              "operand": "CUR_ADR",
+              "addr_mode": "direct"
+          },
+          {
+              "opcode": "inc"
+          },
+          {
+              "opcode": "st",
+              "operand": "CUR_ADR",
+              "addr_mode": "direct"
+          },
+          {
+              "opcode": "jmp",
+              "operand": "PRINT_LOOP_2"
+          },
+          {
+              "label": "END_PRINT_1"
+          },
+          {
+              "opcode": "hlt"
+          }
+      ],
+      "data_section": [
+          {
+              "type": "string",
+              "value": [
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "\u0000"
+              ]
+          },
+          {
+              "type": "string",
+              "value": [
+                  "H",
+                  "e",
+                  "l",
+                  "l",
+                  "o",
+                  ",",
+                  " ",
+                  "\u0000"
+              ]
+          }
+      ]
+  }
+out_log: |
+  DEBUG    root:translator.py:39 Starting translation process.
+  DEBUG    root:translator.py:43 Lexer finished.
+  DEBUG    root:translator.py:48 Parser finished. AST generated.
+  DEBUG    root:translator.py:52 AST saved to ast_output.txt.
+  DEBUG    root:translator.py:58 Code generation finished.
+  DEBUG    root:translator.py:63 Unified JSON saved to /tmp/fixed_test_dir\output_compiler.json.
+  DEBUG    root:translator.py:69 Memory configuration saved to /tmp/fixed_test_dir\output_compiler_memory.json and output_instructions.json.
+  DEBUG    root:translator.py:75 Translation process completed.
+  INFO     root:data_path.py:36 Загрузка данных из файла: /tmp/fixed_test_dir\output_compiler_memory.json
+  INFO     root:data_path.py:49 Начинаем инициализацию памяти...
+  INFO     root:data_path.py:58 Memory[125] initialized with CUR_ADR (125)
+  INFO     root:data_path.py:61 Memory[126] initialized with IN_ADR (126)
+  INFO     root:data_path.py:64 Memory[127] initialized with OUT_ADR (127)
+  INFO     root:data_path.py:68 Инициализация памяти завершена.
+  INFO     root:data_path.py:69 Initialized memory: [1, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '\x00', 18, 'H', 'e', 'l', 'l', 'o', ',', ' ', '\x00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 125, 126, 127]
+  DEBUG    root:machine.py:19 Control Unit initialized.
+  DEBUG    root:machine.py:262 Starting program execution.
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 0 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 0
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 1, PC: 0, ADDR: 0, ACC: 0, DR: 0, DA: 0}}
+  DEBUG    root:machine.py:24 {{TICK: 2, PC: 0, ADDR: 0, ACC: 1, DR: 0, DA: 0}}
+  DEBUG    root:machine.py:24 {{TICK: 3, PC: 1, ADDR: 0, ACC: 1, DR: 0, DA: 0}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 3, PC: 1, ADDR: 0, ACC: 1, DR: 0, DA: 0}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 1 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 1
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 4, PC: 1, ADDR: 125, ACC: 1, DR: 0, DA: 125}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 125.
+  DEBUG    root:machine.py:24 {{TICK: 5, PC: 1, ADDR: 125, ACC: 1, DR: 0, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 6, PC: 2, ADDR: 125, ACC: 1, DR: 0, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 6, PC: 2, ADDR: 125, ACC: 1, DR: 0, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 2 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 2
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: indirect
+  DEBUG    root:machine.py:24 {{TICK: 7, PC: 2, ADDR: 126, ACC: 1, DR: 0, DA: 126}}
+  DEBUG    root:machine.py:24 {{TICK: 8, PC: 2, ADDR: 126, ACC: 1, DR: 126, DA: 126}}
+  DEBUG    root:machine.py:24 {{TICK: 9, PC: 2, ADDR: 126, ACC: 1, DR: 126, DA: 126}}
+  INFO     root:data_path.py:145 Input[0]: r added to memory at address 126
+  DEBUG    root:machine.py:24 {{TICK: 10, PC: 2, ADDR: 126, ACC: r, DR: 126, DA: 126}}
+  DEBUG    root:machine.py:24 {{TICK: 11, PC: 3, ADDR: 126, ACC: r, DR: 126, DA: 126}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 11, PC: 3, ADDR: 126, ACC: r, DR: 126, DA: 126}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 3 - Opcode: cmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: cmp at PC: 3
+  DEBUG    root:machine.py:24 {{TICK: 12, PC: 3, ADDR: 126, ACC: r, DR: ., DA: 126}}
+  DEBUG    root:machine.py:24 {{TICK: 13, PC: 3, ADDR: 126, ACC: r, DR: ., DA: 126}}
+  DEBUG    root:machine.py:24 {{TICK: 14, PC: 4, ADDR: 126, ACC: r, DR: ., DA: 126}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 14, PC: 4, ADDR: 126, ACC: r, DR: ., DA: 126}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 4 - Opcode: je
+  DEBUG    root:machine.py:46 Executing control flow instruction: je at PC: 4
+  DEBUG    root:machine.py:66 JE condition not met. Incrementing PC.
+  DEBUG    root:machine.py:24 {{TICK: 15, PC: 5, ADDR: 126, ACC: r, DR: ., DA: 126}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 15, PC: 5, ADDR: 126, ACC: r, DR: ., DA: 126}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 5 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 5
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: indirect
+  DEBUG    root:machine.py:24 {{TICK: 16, PC: 5, ADDR: 125, ACC: r, DR: ., DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 17, PC: 5, ADDR: 125, ACC: r, DR: 1, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 18, PC: 5, ADDR: 1, ACC: r, DR: 1, DA: 1}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 1.
+  DEBUG    root:machine.py:24 {{TICK: 19, PC: 5, ADDR: 1, ACC: r, DR: 1, DA: 1}}
+  DEBUG    root:machine.py:24 {{TICK: 20, PC: 6, ADDR: 1, ACC: r, DR: 1, DA: 1}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 20, PC: 6, ADDR: 1, ACC: r, DR: 1, DA: 1}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 6 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 6
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 21, PC: 6, ADDR: 125, ACC: r, DR: 1, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 22, PC: 6, ADDR: 125, ACC: 1, DR: 1, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 23, PC: 7, ADDR: 125, ACC: 1, DR: 1, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 23, PC: 7, ADDR: 125, ACC: 1, DR: 1, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 7 - Opcode: inc
+  DEBUG    root:machine.py:46 Executing control flow instruction: inc at PC: 7
+  DEBUG    root:machine.py:24 {{TICK: 24, PC: 7, ADDR: 125, ACC: 1, DR: 1, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 25, PC: 7, ADDR: 125, ACC: 2, DR: 1, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 26, PC: 8, ADDR: 125, ACC: 2, DR: 1, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 26, PC: 8, ADDR: 125, ACC: 2, DR: 1, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 8 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 8
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 27, PC: 8, ADDR: 125, ACC: 2, DR: 1, DA: 125}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 125.
+  DEBUG    root:machine.py:24 {{TICK: 28, PC: 8, ADDR: 125, ACC: 2, DR: 1, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 29, PC: 9, ADDR: 125, ACC: 2, DR: 1, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 29, PC: 9, ADDR: 125, ACC: 2, DR: 1, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 9 - Opcode: jmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: jmp at PC: 9
+  DEBUG    root:machine.py:54 JMP to address: 2
+  DEBUG    root:machine.py:24 {{TICK: 30, PC: 2, ADDR: 125, ACC: 2, DR: 1, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 30, PC: 2, ADDR: 125, ACC: 2, DR: 1, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 2 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 2
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: indirect
+  DEBUG    root:machine.py:24 {{TICK: 31, PC: 2, ADDR: 126, ACC: 2, DR: 1, DA: 126}}
+  DEBUG    root:machine.py:24 {{TICK: 32, PC: 2, ADDR: 126, ACC: 2, DR: 126, DA: 126}}
+  DEBUG    root:machine.py:24 {{TICK: 33, PC: 2, ADDR: 126, ACC: 2, DR: 126, DA: 126}}
+  INFO     root:data_path.py:145 Input[1]: a added to memory at address 126
+  DEBUG    root:machine.py:24 {{TICK: 34, PC: 2, ADDR: 126, ACC: a, DR: 126, DA: 126}}
+  DEBUG    root:machine.py:24 {{TICK: 35, PC: 3, ADDR: 126, ACC: a, DR: 126, DA: 126}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 35, PC: 3, ADDR: 126, ACC: a, DR: 126, DA: 126}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 3 - Opcode: cmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: cmp at PC: 3
+  DEBUG    root:machine.py:24 {{TICK: 36, PC: 3, ADDR: 126, ACC: a, DR: ., DA: 126}}
+  DEBUG    root:machine.py:24 {{TICK: 37, PC: 3, ADDR: 126, ACC: a, DR: ., DA: 126}}
+  DEBUG    root:machine.py:24 {{TICK: 38, PC: 4, ADDR: 126, ACC: a, DR: ., DA: 126}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 38, PC: 4, ADDR: 126, ACC: a, DR: ., DA: 126}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 4 - Opcode: je
+  DEBUG    root:machine.py:46 Executing control flow instruction: je at PC: 4
+  DEBUG    root:machine.py:66 JE condition not met. Incrementing PC.
+  DEBUG    root:machine.py:24 {{TICK: 39, PC: 5, ADDR: 126, ACC: a, DR: ., DA: 126}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 39, PC: 5, ADDR: 126, ACC: a, DR: ., DA: 126}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 5 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 5
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: indirect
+  DEBUG    root:machine.py:24 {{TICK: 40, PC: 5, ADDR: 125, ACC: a, DR: ., DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 41, PC: 5, ADDR: 125, ACC: a, DR: 2, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 42, PC: 5, ADDR: 2, ACC: a, DR: 2, DA: 2}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 2.
+  DEBUG    root:machine.py:24 {{TICK: 43, PC: 5, ADDR: 2, ACC: a, DR: 2, DA: 2}}
+  DEBUG    root:machine.py:24 {{TICK: 44, PC: 6, ADDR: 2, ACC: a, DR: 2, DA: 2}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 44, PC: 6, ADDR: 2, ACC: a, DR: 2, DA: 2}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 6 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 6
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 45, PC: 6, ADDR: 125, ACC: a, DR: 2, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 46, PC: 6, ADDR: 125, ACC: 2, DR: 2, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 47, PC: 7, ADDR: 125, ACC: 2, DR: 2, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 47, PC: 7, ADDR: 125, ACC: 2, DR: 2, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 7 - Opcode: inc
+  DEBUG    root:machine.py:46 Executing control flow instruction: inc at PC: 7
+  DEBUG    root:machine.py:24 {{TICK: 48, PC: 7, ADDR: 125, ACC: 2, DR: 2, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 49, PC: 7, ADDR: 125, ACC: 3, DR: 2, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 50, PC: 8, ADDR: 125, ACC: 3, DR: 2, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 50, PC: 8, ADDR: 125, ACC: 3, DR: 2, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 8 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 8
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 51, PC: 8, ADDR: 125, ACC: 3, DR: 2, DA: 125}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 125.
+  DEBUG    root:machine.py:24 {{TICK: 52, PC: 8, ADDR: 125, ACC: 3, DR: 2, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 53, PC: 9, ADDR: 125, ACC: 3, DR: 2, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 53, PC: 9, ADDR: 125, ACC: 3, DR: 2, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 9 - Opcode: jmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: jmp at PC: 9
+  DEBUG    root:machine.py:54 JMP to address: 2
+  DEBUG    root:machine.py:24 {{TICK: 54, PC: 2, ADDR: 125, ACC: 3, DR: 2, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 54, PC: 2, ADDR: 125, ACC: 3, DR: 2, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 2 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 2
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: indirect
+  DEBUG    root:machine.py:24 {{TICK: 55, PC: 2, ADDR: 126, ACC: 3, DR: 2, DA: 126}}
+  DEBUG    root:machine.py:24 {{TICK: 56, PC: 2, ADDR: 126, ACC: 3, DR: 126, DA: 126}}
+  DEBUG    root:machine.py:24 {{TICK: 57, PC: 2, ADDR: 126, ACC: 3, DR: 126, DA: 126}}
+  INFO     root:data_path.py:145 Input[2]: h added to memory at address 126
+  DEBUG    root:machine.py:24 {{TICK: 58, PC: 2, ADDR: 126, ACC: h, DR: 126, DA: 126}}
+  DEBUG    root:machine.py:24 {{TICK: 59, PC: 3, ADDR: 126, ACC: h, DR: 126, DA: 126}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 59, PC: 3, ADDR: 126, ACC: h, DR: 126, DA: 126}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 3 - Opcode: cmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: cmp at PC: 3
+  DEBUG    root:machine.py:24 {{TICK: 60, PC: 3, ADDR: 126, ACC: h, DR: ., DA: 126}}
+  DEBUG    root:machine.py:24 {{TICK: 61, PC: 3, ADDR: 126, ACC: h, DR: ., DA: 126}}
+  DEBUG    root:machine.py:24 {{TICK: 62, PC: 4, ADDR: 126, ACC: h, DR: ., DA: 126}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 62, PC: 4, ADDR: 126, ACC: h, DR: ., DA: 126}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 4 - Opcode: je
+  DEBUG    root:machine.py:46 Executing control flow instruction: je at PC: 4
+  DEBUG    root:machine.py:66 JE condition not met. Incrementing PC.
+  DEBUG    root:machine.py:24 {{TICK: 63, PC: 5, ADDR: 126, ACC: h, DR: ., DA: 126}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 63, PC: 5, ADDR: 126, ACC: h, DR: ., DA: 126}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 5 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 5
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: indirect
+  DEBUG    root:machine.py:24 {{TICK: 64, PC: 5, ADDR: 125, ACC: h, DR: ., DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 65, PC: 5, ADDR: 125, ACC: h, DR: 3, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 66, PC: 5, ADDR: 3, ACC: h, DR: 3, DA: 3}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 3.
+  DEBUG    root:machine.py:24 {{TICK: 67, PC: 5, ADDR: 3, ACC: h, DR: 3, DA: 3}}
+  DEBUG    root:machine.py:24 {{TICK: 68, PC: 6, ADDR: 3, ACC: h, DR: 3, DA: 3}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 68, PC: 6, ADDR: 3, ACC: h, DR: 3, DA: 3}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 6 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 6
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 69, PC: 6, ADDR: 125, ACC: h, DR: 3, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 70, PC: 6, ADDR: 125, ACC: 3, DR: 3, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 71, PC: 7, ADDR: 125, ACC: 3, DR: 3, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 71, PC: 7, ADDR: 125, ACC: 3, DR: 3, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 7 - Opcode: inc
+  DEBUG    root:machine.py:46 Executing control flow instruction: inc at PC: 7
+  DEBUG    root:machine.py:24 {{TICK: 72, PC: 7, ADDR: 125, ACC: 3, DR: 3, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 73, PC: 7, ADDR: 125, ACC: 4, DR: 3, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 74, PC: 8, ADDR: 125, ACC: 4, DR: 3, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 74, PC: 8, ADDR: 125, ACC: 4, DR: 3, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 8 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 8
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 75, PC: 8, ADDR: 125, ACC: 4, DR: 3, DA: 125}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 125.
+  DEBUG    root:machine.py:24 {{TICK: 76, PC: 8, ADDR: 125, ACC: 4, DR: 3, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 77, PC: 9, ADDR: 125, ACC: 4, DR: 3, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 77, PC: 9, ADDR: 125, ACC: 4, DR: 3, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 9 - Opcode: jmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: jmp at PC: 9
+  DEBUG    root:machine.py:54 JMP to address: 2
+  DEBUG    root:machine.py:24 {{TICK: 78, PC: 2, ADDR: 125, ACC: 4, DR: 3, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 78, PC: 2, ADDR: 125, ACC: 4, DR: 3, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 2 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 2
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: indirect
+  DEBUG    root:machine.py:24 {{TICK: 79, PC: 2, ADDR: 126, ACC: 4, DR: 3, DA: 126}}
+  DEBUG    root:machine.py:24 {{TICK: 80, PC: 2, ADDR: 126, ACC: 4, DR: 126, DA: 126}}
+  DEBUG    root:machine.py:24 {{TICK: 81, PC: 2, ADDR: 126, ACC: 4, DR: 126, DA: 126}}
+  INFO     root:data_path.py:145 Input[3]: i added to memory at address 126
+  DEBUG    root:machine.py:24 {{TICK: 82, PC: 2, ADDR: 126, ACC: i, DR: 126, DA: 126}}
+  DEBUG    root:machine.py:24 {{TICK: 83, PC: 3, ADDR: 126, ACC: i, DR: 126, DA: 126}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 83, PC: 3, ADDR: 126, ACC: i, DR: 126, DA: 126}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 3 - Opcode: cmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: cmp at PC: 3
+  DEBUG    root:machine.py:24 {{TICK: 84, PC: 3, ADDR: 126, ACC: i, DR: ., DA: 126}}
+  DEBUG    root:machine.py:24 {{TICK: 85, PC: 3, ADDR: 126, ACC: i, DR: ., DA: 126}}
+  DEBUG    root:machine.py:24 {{TICK: 86, PC: 4, ADDR: 126, ACC: i, DR: ., DA: 126}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 86, PC: 4, ADDR: 126, ACC: i, DR: ., DA: 126}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 4 - Opcode: je
+  DEBUG    root:machine.py:46 Executing control flow instruction: je at PC: 4
+  DEBUG    root:machine.py:66 JE condition not met. Incrementing PC.
+  DEBUG    root:machine.py:24 {{TICK: 87, PC: 5, ADDR: 126, ACC: i, DR: ., DA: 126}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 87, PC: 5, ADDR: 126, ACC: i, DR: ., DA: 126}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 5 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 5
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: indirect
+  DEBUG    root:machine.py:24 {{TICK: 88, PC: 5, ADDR: 125, ACC: i, DR: ., DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 89, PC: 5, ADDR: 125, ACC: i, DR: 4, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 90, PC: 5, ADDR: 4, ACC: i, DR: 4, DA: 4}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 4.
+  DEBUG    root:machine.py:24 {{TICK: 91, PC: 5, ADDR: 4, ACC: i, DR: 4, DA: 4}}
+  DEBUG    root:machine.py:24 {{TICK: 92, PC: 6, ADDR: 4, ACC: i, DR: 4, DA: 4}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 92, PC: 6, ADDR: 4, ACC: i, DR: 4, DA: 4}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 6 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 6
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 93, PC: 6, ADDR: 125, ACC: i, DR: 4, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 94, PC: 6, ADDR: 125, ACC: 4, DR: 4, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 95, PC: 7, ADDR: 125, ACC: 4, DR: 4, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 95, PC: 7, ADDR: 125, ACC: 4, DR: 4, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 7 - Opcode: inc
+  DEBUG    root:machine.py:46 Executing control flow instruction: inc at PC: 7
+  DEBUG    root:machine.py:24 {{TICK: 96, PC: 7, ADDR: 125, ACC: 4, DR: 4, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 97, PC: 7, ADDR: 125, ACC: 5, DR: 4, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 98, PC: 8, ADDR: 125, ACC: 5, DR: 4, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 98, PC: 8, ADDR: 125, ACC: 5, DR: 4, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 8 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 8
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 99, PC: 8, ADDR: 125, ACC: 5, DR: 4, DA: 125}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 125.
+  DEBUG    root:machine.py:24 {{TICK: 100, PC: 8, ADDR: 125, ACC: 5, DR: 4, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 101, PC: 9, ADDR: 125, ACC: 5, DR: 4, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 101, PC: 9, ADDR: 125, ACC: 5, DR: 4, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 9 - Opcode: jmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: jmp at PC: 9
+  DEBUG    root:machine.py:54 JMP to address: 2
+  DEBUG    root:machine.py:24 {{TICK: 102, PC: 2, ADDR: 125, ACC: 5, DR: 4, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 102, PC: 2, ADDR: 125, ACC: 5, DR: 4, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 2 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 2
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: indirect
+  DEBUG    root:machine.py:24 {{TICK: 103, PC: 2, ADDR: 126, ACC: 5, DR: 4, DA: 126}}
+  DEBUG    root:machine.py:24 {{TICK: 104, PC: 2, ADDR: 126, ACC: 5, DR: 126, DA: 126}}
+  DEBUG    root:machine.py:24 {{TICK: 105, PC: 2, ADDR: 126, ACC: 5, DR: 126, DA: 126}}
+  INFO     root:data_path.py:145 Input[4]: m added to memory at address 126
+  DEBUG    root:machine.py:24 {{TICK: 106, PC: 2, ADDR: 126, ACC: m, DR: 126, DA: 126}}
+  DEBUG    root:machine.py:24 {{TICK: 107, PC: 3, ADDR: 126, ACC: m, DR: 126, DA: 126}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 107, PC: 3, ADDR: 126, ACC: m, DR: 126, DA: 126}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 3 - Opcode: cmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: cmp at PC: 3
+  DEBUG    root:machine.py:24 {{TICK: 108, PC: 3, ADDR: 126, ACC: m, DR: ., DA: 126}}
+  DEBUG    root:machine.py:24 {{TICK: 109, PC: 3, ADDR: 126, ACC: m, DR: ., DA: 126}}
+  DEBUG    root:machine.py:24 {{TICK: 110, PC: 4, ADDR: 126, ACC: m, DR: ., DA: 126}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 110, PC: 4, ADDR: 126, ACC: m, DR: ., DA: 126}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 4 - Opcode: je
+  DEBUG    root:machine.py:46 Executing control flow instruction: je at PC: 4
+  DEBUG    root:machine.py:66 JE condition not met. Incrementing PC.
+  DEBUG    root:machine.py:24 {{TICK: 111, PC: 5, ADDR: 126, ACC: m, DR: ., DA: 126}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 111, PC: 5, ADDR: 126, ACC: m, DR: ., DA: 126}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 5 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 5
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: indirect
+  DEBUG    root:machine.py:24 {{TICK: 112, PC: 5, ADDR: 125, ACC: m, DR: ., DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 113, PC: 5, ADDR: 125, ACC: m, DR: 5, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 114, PC: 5, ADDR: 5, ACC: m, DR: 5, DA: 5}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 5.
+  DEBUG    root:machine.py:24 {{TICK: 115, PC: 5, ADDR: 5, ACC: m, DR: 5, DA: 5}}
+  DEBUG    root:machine.py:24 {{TICK: 116, PC: 6, ADDR: 5, ACC: m, DR: 5, DA: 5}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 116, PC: 6, ADDR: 5, ACC: m, DR: 5, DA: 5}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 6 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 6
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 117, PC: 6, ADDR: 125, ACC: m, DR: 5, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 118, PC: 6, ADDR: 125, ACC: 5, DR: 5, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 119, PC: 7, ADDR: 125, ACC: 5, DR: 5, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 119, PC: 7, ADDR: 125, ACC: 5, DR: 5, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 7 - Opcode: inc
+  DEBUG    root:machine.py:46 Executing control flow instruction: inc at PC: 7
+  DEBUG    root:machine.py:24 {{TICK: 120, PC: 7, ADDR: 125, ACC: 5, DR: 5, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 121, PC: 7, ADDR: 125, ACC: 6, DR: 5, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 122, PC: 8, ADDR: 125, ACC: 6, DR: 5, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 122, PC: 8, ADDR: 125, ACC: 6, DR: 5, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 8 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 8
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 123, PC: 8, ADDR: 125, ACC: 6, DR: 5, DA: 125}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 125.
+  DEBUG    root:machine.py:24 {{TICK: 124, PC: 8, ADDR: 125, ACC: 6, DR: 5, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 125, PC: 9, ADDR: 125, ACC: 6, DR: 5, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 125, PC: 9, ADDR: 125, ACC: 6, DR: 5, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 9 - Opcode: jmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: jmp at PC: 9
+  DEBUG    root:machine.py:54 JMP to address: 2
+  DEBUG    root:machine.py:24 {{TICK: 126, PC: 2, ADDR: 125, ACC: 6, DR: 5, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 126, PC: 2, ADDR: 125, ACC: 6, DR: 5, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 2 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 2
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: indirect
+  DEBUG    root:machine.py:24 {{TICK: 127, PC: 2, ADDR: 126, ACC: 6, DR: 5, DA: 126}}
+  DEBUG    root:machine.py:24 {{TICK: 128, PC: 2, ADDR: 126, ACC: 6, DR: 126, DA: 126}}
+  DEBUG    root:machine.py:24 {{TICK: 129, PC: 2, ADDR: 126, ACC: 6, DR: 126, DA: 126}}
+  INFO     root:data_path.py:145 Input[5]: . added to memory at address 126
+  DEBUG    root:machine.py:24 {{TICK: 130, PC: 2, ADDR: 126, ACC: ., DR: 126, DA: 126}}
+  DEBUG    root:machine.py:24 {{TICK: 131, PC: 3, ADDR: 126, ACC: ., DR: 126, DA: 126}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 131, PC: 3, ADDR: 126, ACC: ., DR: 126, DA: 126}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 3 - Opcode: cmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: cmp at PC: 3
+  DEBUG    root:machine.py:24 {{TICK: 132, PC: 3, ADDR: 126, ACC: ., DR: ., DA: 126}}
+  DEBUG    root:machine.py:24 {{TICK: 133, PC: 3, ADDR: 126, ACC: ., DR: ., DA: 126}}
+  DEBUG    root:machine.py:24 {{TICK: 134, PC: 4, ADDR: 126, ACC: ., DR: ., DA: 126}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 134, PC: 4, ADDR: 126, ACC: ., DR: ., DA: 126}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 4 - Opcode: je
+  DEBUG    root:machine.py:46 Executing control flow instruction: je at PC: 4
+  DEBUG    root:machine.py:62 JE condition met. Jumping to address: 10
+  DEBUG    root:machine.py:24 {{TICK: 135, PC: 10, ADDR: 126, ACC: ., DR: ., DA: 126}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 135, PC: 10, ADDR: 126, ACC: ., DR: ., DA: 126}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 10 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 10
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 136, PC: 10, ADDR: 17, ACC: ., DR: ., DA: 17}}
+  DEBUG    root:machine.py:24 {{TICK: 137, PC: 10, ADDR: 17, ACC: 18, DR: ., DA: 17}}
+  DEBUG    root:machine.py:24 {{TICK: 138, PC: 11, ADDR: 17, ACC: 18, DR: ., DA: 17}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 138, PC: 11, ADDR: 17, ACC: 18, DR: ., DA: 17}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 11 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 11
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 139, PC: 11, ADDR: 125, ACC: 18, DR: ., DA: 125}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 125.
+  DEBUG    root:machine.py:24 {{TICK: 140, PC: 11, ADDR: 125, ACC: 18, DR: ., DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 141, PC: 12, ADDR: 125, ACC: 18, DR: ., DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 141, PC: 12, ADDR: 125, ACC: 18, DR: ., DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 12 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 12
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: indirect
+  DEBUG    root:machine.py:24 {{TICK: 142, PC: 12, ADDR: 125, ACC: 18, DR: ., DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 143, PC: 12, ADDR: 125, ACC: 18, DR: 18, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 144, PC: 12, ADDR: 18, ACC: 18, DR: 18, DA: 18}}
+  DEBUG    root:machine.py:24 {{TICK: 145, PC: 12, ADDR: 18, ACC: H, DR: 18, DA: 18}}
+  DEBUG    root:machine.py:24 {{TICK: 146, PC: 13, ADDR: 18, ACC: H, DR: 18, DA: 18}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 146, PC: 13, ADDR: 18, ACC: H, DR: 18, DA: 18}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 13 - Opcode: cmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: cmp at PC: 13
+  DEBUG    root:machine.py:24 {{TICK: 147, PC: 13, ADDR: 18, ACC: H, DR: \u0000, DA: 18}}
+  DEBUG    root:machine.py:24 {{TICK: 148, PC: 13, ADDR: 18, ACC: H, DR: \u0000, DA: 18}}
+  DEBUG    root:machine.py:24 {{TICK: 149, PC: 14, ADDR: 18, ACC: H, DR: \u0000, DA: 18}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 149, PC: 14, ADDR: 18, ACC: H, DR: \u0000, DA: 18}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 14 - Opcode: je
+  DEBUG    root:machine.py:46 Executing control flow instruction: je at PC: 14
+  DEBUG    root:machine.py:66 JE condition not met. Incrementing PC.
+  DEBUG    root:machine.py:24 {{TICK: 150, PC: 15, ADDR: 18, ACC: H, DR: \u0000, DA: 18}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 150, PC: 15, ADDR: 18, ACC: H, DR: \u0000, DA: 18}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 15 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 15
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 151, PC: 15, ADDR: 127, ACC: H, DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 127.
+  INFO     root:data_path.py:136 New output detected at address 127: H
+  INFO     root:data_path.py:139 OUTPUT: ['H']
+  DEBUG    root:machine.py:24 {{TICK: 152, PC: 15, ADDR: 127, ACC: H, DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:24 {{TICK: 153, PC: 16, ADDR: 127, ACC: H, DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 153, PC: 16, ADDR: 127, ACC: H, DR: \u0000, DA: 127}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 16 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 16
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 154, PC: 16, ADDR: 125, ACC: H, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 155, PC: 16, ADDR: 125, ACC: 18, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 156, PC: 17, ADDR: 125, ACC: 18, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 156, PC: 17, ADDR: 125, ACC: 18, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 17 - Opcode: inc
+  DEBUG    root:machine.py:46 Executing control flow instruction: inc at PC: 17
+  DEBUG    root:machine.py:24 {{TICK: 157, PC: 17, ADDR: 125, ACC: 18, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 158, PC: 17, ADDR: 125, ACC: 19, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 159, PC: 18, ADDR: 125, ACC: 19, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 159, PC: 18, ADDR: 125, ACC: 19, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 18 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 18
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 160, PC: 18, ADDR: 125, ACC: 19, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 125.
+  DEBUG    root:machine.py:24 {{TICK: 161, PC: 18, ADDR: 125, ACC: 19, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 162, PC: 19, ADDR: 125, ACC: 19, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 162, PC: 19, ADDR: 125, ACC: 19, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 19 - Opcode: jmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: jmp at PC: 19
+  DEBUG    root:machine.py:54 JMP to address: 12
+  DEBUG    root:machine.py:24 {{TICK: 163, PC: 12, ADDR: 125, ACC: 19, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 163, PC: 12, ADDR: 125, ACC: 19, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 12 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 12
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: indirect
+  DEBUG    root:machine.py:24 {{TICK: 164, PC: 12, ADDR: 125, ACC: 19, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 165, PC: 12, ADDR: 125, ACC: 19, DR: 19, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 166, PC: 12, ADDR: 19, ACC: 19, DR: 19, DA: 19}}
+  DEBUG    root:machine.py:24 {{TICK: 167, PC: 12, ADDR: 19, ACC: e, DR: 19, DA: 19}}
+  DEBUG    root:machine.py:24 {{TICK: 168, PC: 13, ADDR: 19, ACC: e, DR: 19, DA: 19}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 168, PC: 13, ADDR: 19, ACC: e, DR: 19, DA: 19}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 13 - Opcode: cmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: cmp at PC: 13
+  DEBUG    root:machine.py:24 {{TICK: 169, PC: 13, ADDR: 19, ACC: e, DR: \u0000, DA: 19}}
+  DEBUG    root:machine.py:24 {{TICK: 170, PC: 13, ADDR: 19, ACC: e, DR: \u0000, DA: 19}}
+  DEBUG    root:machine.py:24 {{TICK: 171, PC: 14, ADDR: 19, ACC: e, DR: \u0000, DA: 19}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 171, PC: 14, ADDR: 19, ACC: e, DR: \u0000, DA: 19}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 14 - Opcode: je
+  DEBUG    root:machine.py:46 Executing control flow instruction: je at PC: 14
+  DEBUG    root:machine.py:66 JE condition not met. Incrementing PC.
+  DEBUG    root:machine.py:24 {{TICK: 172, PC: 15, ADDR: 19, ACC: e, DR: \u0000, DA: 19}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 172, PC: 15, ADDR: 19, ACC: e, DR: \u0000, DA: 19}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 15 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 15
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 173, PC: 15, ADDR: 127, ACC: e, DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 127.
+  INFO     root:data_path.py:136 New output detected at address 127: e
+  INFO     root:data_path.py:139 OUTPUT: ['H', 'e']
+  DEBUG    root:machine.py:24 {{TICK: 174, PC: 15, ADDR: 127, ACC: e, DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:24 {{TICK: 175, PC: 16, ADDR: 127, ACC: e, DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 175, PC: 16, ADDR: 127, ACC: e, DR: \u0000, DA: 127}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 16 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 16
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 176, PC: 16, ADDR: 125, ACC: e, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 177, PC: 16, ADDR: 125, ACC: 19, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 178, PC: 17, ADDR: 125, ACC: 19, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 178, PC: 17, ADDR: 125, ACC: 19, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 17 - Opcode: inc
+  DEBUG    root:machine.py:46 Executing control flow instruction: inc at PC: 17
+  DEBUG    root:machine.py:24 {{TICK: 179, PC: 17, ADDR: 125, ACC: 19, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 180, PC: 17, ADDR: 125, ACC: 20, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 181, PC: 18, ADDR: 125, ACC: 20, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 181, PC: 18, ADDR: 125, ACC: 20, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 18 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 18
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 182, PC: 18, ADDR: 125, ACC: 20, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 125.
+  DEBUG    root:machine.py:24 {{TICK: 183, PC: 18, ADDR: 125, ACC: 20, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 184, PC: 19, ADDR: 125, ACC: 20, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 184, PC: 19, ADDR: 125, ACC: 20, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 19 - Opcode: jmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: jmp at PC: 19
+  DEBUG    root:machine.py:54 JMP to address: 12
+  DEBUG    root:machine.py:24 {{TICK: 185, PC: 12, ADDR: 125, ACC: 20, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 185, PC: 12, ADDR: 125, ACC: 20, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 12 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 12
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: indirect
+  DEBUG    root:machine.py:24 {{TICK: 186, PC: 12, ADDR: 125, ACC: 20, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 187, PC: 12, ADDR: 125, ACC: 20, DR: 20, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 188, PC: 12, ADDR: 20, ACC: 20, DR: 20, DA: 20}}
+  DEBUG    root:machine.py:24 {{TICK: 189, PC: 12, ADDR: 20, ACC: l, DR: 20, DA: 20}}
+  DEBUG    root:machine.py:24 {{TICK: 190, PC: 13, ADDR: 20, ACC: l, DR: 20, DA: 20}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 190, PC: 13, ADDR: 20, ACC: l, DR: 20, DA: 20}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 13 - Opcode: cmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: cmp at PC: 13
+  DEBUG    root:machine.py:24 {{TICK: 191, PC: 13, ADDR: 20, ACC: l, DR: \u0000, DA: 20}}
+  DEBUG    root:machine.py:24 {{TICK: 192, PC: 13, ADDR: 20, ACC: l, DR: \u0000, DA: 20}}
+  DEBUG    root:machine.py:24 {{TICK: 193, PC: 14, ADDR: 20, ACC: l, DR: \u0000, DA: 20}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 193, PC: 14, ADDR: 20, ACC: l, DR: \u0000, DA: 20}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 14 - Opcode: je
+  DEBUG    root:machine.py:46 Executing control flow instruction: je at PC: 14
+  DEBUG    root:machine.py:66 JE condition not met. Incrementing PC.
+  DEBUG    root:machine.py:24 {{TICK: 194, PC: 15, ADDR: 20, ACC: l, DR: \u0000, DA: 20}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 194, PC: 15, ADDR: 20, ACC: l, DR: \u0000, DA: 20}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 15 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 15
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 195, PC: 15, ADDR: 127, ACC: l, DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 127.
+  INFO     root:data_path.py:136 New output detected at address 127: l
+  INFO     root:data_path.py:139 OUTPUT: ['H', 'e', 'l']
+  DEBUG    root:machine.py:24 {{TICK: 196, PC: 15, ADDR: 127, ACC: l, DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:24 {{TICK: 197, PC: 16, ADDR: 127, ACC: l, DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 197, PC: 16, ADDR: 127, ACC: l, DR: \u0000, DA: 127}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 16 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 16
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 198, PC: 16, ADDR: 125, ACC: l, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 199, PC: 16, ADDR: 125, ACC: 20, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 200, PC: 17, ADDR: 125, ACC: 20, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 200, PC: 17, ADDR: 125, ACC: 20, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 17 - Opcode: inc
+  DEBUG    root:machine.py:46 Executing control flow instruction: inc at PC: 17
+  DEBUG    root:machine.py:24 {{TICK: 201, PC: 17, ADDR: 125, ACC: 20, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 202, PC: 17, ADDR: 125, ACC: 21, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 203, PC: 18, ADDR: 125, ACC: 21, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 203, PC: 18, ADDR: 125, ACC: 21, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 18 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 18
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 204, PC: 18, ADDR: 125, ACC: 21, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 125.
+  DEBUG    root:machine.py:24 {{TICK: 205, PC: 18, ADDR: 125, ACC: 21, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 206, PC: 19, ADDR: 125, ACC: 21, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 206, PC: 19, ADDR: 125, ACC: 21, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 19 - Opcode: jmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: jmp at PC: 19
+  DEBUG    root:machine.py:54 JMP to address: 12
+  DEBUG    root:machine.py:24 {{TICK: 207, PC: 12, ADDR: 125, ACC: 21, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 207, PC: 12, ADDR: 125, ACC: 21, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 12 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 12
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: indirect
+  DEBUG    root:machine.py:24 {{TICK: 208, PC: 12, ADDR: 125, ACC: 21, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 209, PC: 12, ADDR: 125, ACC: 21, DR: 21, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 210, PC: 12, ADDR: 21, ACC: 21, DR: 21, DA: 21}}
+  DEBUG    root:machine.py:24 {{TICK: 211, PC: 12, ADDR: 21, ACC: l, DR: 21, DA: 21}}
+  DEBUG    root:machine.py:24 {{TICK: 212, PC: 13, ADDR: 21, ACC: l, DR: 21, DA: 21}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 212, PC: 13, ADDR: 21, ACC: l, DR: 21, DA: 21}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 13 - Opcode: cmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: cmp at PC: 13
+  DEBUG    root:machine.py:24 {{TICK: 213, PC: 13, ADDR: 21, ACC: l, DR: \u0000, DA: 21}}
+  DEBUG    root:machine.py:24 {{TICK: 214, PC: 13, ADDR: 21, ACC: l, DR: \u0000, DA: 21}}
+  DEBUG    root:machine.py:24 {{TICK: 215, PC: 14, ADDR: 21, ACC: l, DR: \u0000, DA: 21}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 215, PC: 14, ADDR: 21, ACC: l, DR: \u0000, DA: 21}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 14 - Opcode: je
+  DEBUG    root:machine.py:46 Executing control flow instruction: je at PC: 14
+  DEBUG    root:machine.py:66 JE condition not met. Incrementing PC.
+  DEBUG    root:machine.py:24 {{TICK: 216, PC: 15, ADDR: 21, ACC: l, DR: \u0000, DA: 21}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 216, PC: 15, ADDR: 21, ACC: l, DR: \u0000, DA: 21}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 15 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 15
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 217, PC: 15, ADDR: 127, ACC: l, DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 127.
+  INFO     root:data_path.py:136 New output detected at address 127: l
+  INFO     root:data_path.py:139 OUTPUT: ['H', 'e', 'l', 'l']
+  DEBUG    root:machine.py:24 {{TICK: 218, PC: 15, ADDR: 127, ACC: l, DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:24 {{TICK: 219, PC: 16, ADDR: 127, ACC: l, DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 219, PC: 16, ADDR: 127, ACC: l, DR: \u0000, DA: 127}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 16 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 16
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 220, PC: 16, ADDR: 125, ACC: l, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 221, PC: 16, ADDR: 125, ACC: 21, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 222, PC: 17, ADDR: 125, ACC: 21, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 222, PC: 17, ADDR: 125, ACC: 21, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 17 - Opcode: inc
+  DEBUG    root:machine.py:46 Executing control flow instruction: inc at PC: 17
+  DEBUG    root:machine.py:24 {{TICK: 223, PC: 17, ADDR: 125, ACC: 21, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 224, PC: 17, ADDR: 125, ACC: 22, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 225, PC: 18, ADDR: 125, ACC: 22, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 225, PC: 18, ADDR: 125, ACC: 22, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 18 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 18
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 226, PC: 18, ADDR: 125, ACC: 22, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 125.
+  DEBUG    root:machine.py:24 {{TICK: 227, PC: 18, ADDR: 125, ACC: 22, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 228, PC: 19, ADDR: 125, ACC: 22, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 228, PC: 19, ADDR: 125, ACC: 22, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 19 - Opcode: jmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: jmp at PC: 19
+  DEBUG    root:machine.py:54 JMP to address: 12
+  DEBUG    root:machine.py:24 {{TICK: 229, PC: 12, ADDR: 125, ACC: 22, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 229, PC: 12, ADDR: 125, ACC: 22, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 12 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 12
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: indirect
+  DEBUG    root:machine.py:24 {{TICK: 230, PC: 12, ADDR: 125, ACC: 22, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 231, PC: 12, ADDR: 125, ACC: 22, DR: 22, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 232, PC: 12, ADDR: 22, ACC: 22, DR: 22, DA: 22}}
+  DEBUG    root:machine.py:24 {{TICK: 233, PC: 12, ADDR: 22, ACC: o, DR: 22, DA: 22}}
+  DEBUG    root:machine.py:24 {{TICK: 234, PC: 13, ADDR: 22, ACC: o, DR: 22, DA: 22}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 234, PC: 13, ADDR: 22, ACC: o, DR: 22, DA: 22}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 13 - Opcode: cmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: cmp at PC: 13
+  DEBUG    root:machine.py:24 {{TICK: 235, PC: 13, ADDR: 22, ACC: o, DR: \u0000, DA: 22}}
+  DEBUG    root:machine.py:24 {{TICK: 236, PC: 13, ADDR: 22, ACC: o, DR: \u0000, DA: 22}}
+  DEBUG    root:machine.py:24 {{TICK: 237, PC: 14, ADDR: 22, ACC: o, DR: \u0000, DA: 22}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 237, PC: 14, ADDR: 22, ACC: o, DR: \u0000, DA: 22}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 14 - Opcode: je
+  DEBUG    root:machine.py:46 Executing control flow instruction: je at PC: 14
+  DEBUG    root:machine.py:66 JE condition not met. Incrementing PC.
+  DEBUG    root:machine.py:24 {{TICK: 238, PC: 15, ADDR: 22, ACC: o, DR: \u0000, DA: 22}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 238, PC: 15, ADDR: 22, ACC: o, DR: \u0000, DA: 22}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 15 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 15
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 239, PC: 15, ADDR: 127, ACC: o, DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 127.
+  INFO     root:data_path.py:136 New output detected at address 127: o
+  INFO     root:data_path.py:139 OUTPUT: ['H', 'e', 'l', 'l', 'o']
+  DEBUG    root:machine.py:24 {{TICK: 240, PC: 15, ADDR: 127, ACC: o, DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:24 {{TICK: 241, PC: 16, ADDR: 127, ACC: o, DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 241, PC: 16, ADDR: 127, ACC: o, DR: \u0000, DA: 127}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 16 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 16
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 242, PC: 16, ADDR: 125, ACC: o, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 243, PC: 16, ADDR: 125, ACC: 22, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 244, PC: 17, ADDR: 125, ACC: 22, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 244, PC: 17, ADDR: 125, ACC: 22, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 17 - Opcode: inc
+  DEBUG    root:machine.py:46 Executing control flow instruction: inc at PC: 17
+  DEBUG    root:machine.py:24 {{TICK: 245, PC: 17, ADDR: 125, ACC: 22, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 246, PC: 17, ADDR: 125, ACC: 23, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 247, PC: 18, ADDR: 125, ACC: 23, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 247, PC: 18, ADDR: 125, ACC: 23, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 18 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 18
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 248, PC: 18, ADDR: 125, ACC: 23, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 125.
+  DEBUG    root:machine.py:24 {{TICK: 249, PC: 18, ADDR: 125, ACC: 23, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 250, PC: 19, ADDR: 125, ACC: 23, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 250, PC: 19, ADDR: 125, ACC: 23, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 19 - Opcode: jmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: jmp at PC: 19
+  DEBUG    root:machine.py:54 JMP to address: 12
+  DEBUG    root:machine.py:24 {{TICK: 251, PC: 12, ADDR: 125, ACC: 23, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 251, PC: 12, ADDR: 125, ACC: 23, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 12 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 12
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: indirect
+  DEBUG    root:machine.py:24 {{TICK: 252, PC: 12, ADDR: 125, ACC: 23, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 253, PC: 12, ADDR: 125, ACC: 23, DR: 23, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 254, PC: 12, ADDR: 23, ACC: 23, DR: 23, DA: 23}}
+  DEBUG    root:machine.py:24 {{TICK: 255, PC: 12, ADDR: 23, ACC: ,, DR: 23, DA: 23}}
+  DEBUG    root:machine.py:24 {{TICK: 256, PC: 13, ADDR: 23, ACC: ,, DR: 23, DA: 23}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 256, PC: 13, ADDR: 23, ACC: ,, DR: 23, DA: 23}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 13 - Opcode: cmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: cmp at PC: 13
+  DEBUG    root:machine.py:24 {{TICK: 257, PC: 13, ADDR: 23, ACC: ,, DR: \u0000, DA: 23}}
+  DEBUG    root:machine.py:24 {{TICK: 258, PC: 13, ADDR: 23, ACC: ,, DR: \u0000, DA: 23}}
+  DEBUG    root:machine.py:24 {{TICK: 259, PC: 14, ADDR: 23, ACC: ,, DR: \u0000, DA: 23}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 259, PC: 14, ADDR: 23, ACC: ,, DR: \u0000, DA: 23}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 14 - Opcode: je
+  DEBUG    root:machine.py:46 Executing control flow instruction: je at PC: 14
+  DEBUG    root:machine.py:66 JE condition not met. Incrementing PC.
+  DEBUG    root:machine.py:24 {{TICK: 260, PC: 15, ADDR: 23, ACC: ,, DR: \u0000, DA: 23}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 260, PC: 15, ADDR: 23, ACC: ,, DR: \u0000, DA: 23}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 15 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 15
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 261, PC: 15, ADDR: 127, ACC: ,, DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 127.
+  INFO     root:data_path.py:136 New output detected at address 127: ,
+  INFO     root:data_path.py:139 OUTPUT: ['H', 'e', 'l', 'l', 'o', ',']
+  DEBUG    root:machine.py:24 {{TICK: 262, PC: 15, ADDR: 127, ACC: ,, DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:24 {{TICK: 263, PC: 16, ADDR: 127, ACC: ,, DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 263, PC: 16, ADDR: 127, ACC: ,, DR: \u0000, DA: 127}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 16 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 16
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 264, PC: 16, ADDR: 125, ACC: ,, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 265, PC: 16, ADDR: 125, ACC: 23, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 266, PC: 17, ADDR: 125, ACC: 23, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 266, PC: 17, ADDR: 125, ACC: 23, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 17 - Opcode: inc
+  DEBUG    root:machine.py:46 Executing control flow instruction: inc at PC: 17
+  DEBUG    root:machine.py:24 {{TICK: 267, PC: 17, ADDR: 125, ACC: 23, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 268, PC: 17, ADDR: 125, ACC: 24, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 269, PC: 18, ADDR: 125, ACC: 24, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 269, PC: 18, ADDR: 125, ACC: 24, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 18 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 18
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 270, PC: 18, ADDR: 125, ACC: 24, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 125.
+  DEBUG    root:machine.py:24 {{TICK: 271, PC: 18, ADDR: 125, ACC: 24, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 272, PC: 19, ADDR: 125, ACC: 24, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 272, PC: 19, ADDR: 125, ACC: 24, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 19 - Opcode: jmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: jmp at PC: 19
+  DEBUG    root:machine.py:54 JMP to address: 12
+  DEBUG    root:machine.py:24 {{TICK: 273, PC: 12, ADDR: 125, ACC: 24, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 273, PC: 12, ADDR: 125, ACC: 24, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 12 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 12
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: indirect
+  DEBUG    root:machine.py:24 {{TICK: 274, PC: 12, ADDR: 125, ACC: 24, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 275, PC: 12, ADDR: 125, ACC: 24, DR: 24, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 276, PC: 12, ADDR: 24, ACC: 24, DR: 24, DA: 24}}
+  DEBUG    root:machine.py:24 {{TICK: 277, PC: 12, ADDR: 24, ACC:  , DR: 24, DA: 24}}
+  DEBUG    root:machine.py:24 {{TICK: 278, PC: 13, ADDR: 24, ACC:  , DR: 24, DA: 24}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 278, PC: 13, ADDR: 24, ACC:  , DR: 24, DA: 24}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 13 - Opcode: cmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: cmp at PC: 13
+  DEBUG    root:machine.py:24 {{TICK: 279, PC: 13, ADDR: 24, ACC:  , DR: \u0000, DA: 24}}
+  DEBUG    root:machine.py:24 {{TICK: 280, PC: 13, ADDR: 24, ACC:  , DR: \u0000, DA: 24}}
+  DEBUG    root:machine.py:24 {{TICK: 281, PC: 14, ADDR: 24, ACC:  , DR: \u0000, DA: 24}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 281, PC: 14, ADDR: 24, ACC:  , DR: \u0000, DA: 24}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 14 - Opcode: je
+  DEBUG    root:machine.py:46 Executing control flow instruction: je at PC: 14
+  DEBUG    root:machine.py:66 JE condition not met. Incrementing PC.
+  DEBUG    root:machine.py:24 {{TICK: 282, PC: 15, ADDR: 24, ACC:  , DR: \u0000, DA: 24}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 282, PC: 15, ADDR: 24, ACC:  , DR: \u0000, DA: 24}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 15 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 15
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 283, PC: 15, ADDR: 127, ACC:  , DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 127.
+  INFO     root:data_path.py:136 New output detected at address 127:  
+  INFO     root:data_path.py:139 OUTPUT: ['H', 'e', 'l', 'l', 'o', ',', ' ']
+  DEBUG    root:machine.py:24 {{TICK: 284, PC: 15, ADDR: 127, ACC:  , DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:24 {{TICK: 285, PC: 16, ADDR: 127, ACC:  , DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 285, PC: 16, ADDR: 127, ACC:  , DR: \u0000, DA: 127}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 16 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 16
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 286, PC: 16, ADDR: 125, ACC:  , DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 287, PC: 16, ADDR: 125, ACC: 24, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 288, PC: 17, ADDR: 125, ACC: 24, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 288, PC: 17, ADDR: 125, ACC: 24, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 17 - Opcode: inc
+  DEBUG    root:machine.py:46 Executing control flow instruction: inc at PC: 17
+  DEBUG    root:machine.py:24 {{TICK: 289, PC: 17, ADDR: 125, ACC: 24, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 290, PC: 17, ADDR: 125, ACC: 25, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 291, PC: 18, ADDR: 125, ACC: 25, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 291, PC: 18, ADDR: 125, ACC: 25, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 18 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 18
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 292, PC: 18, ADDR: 125, ACC: 25, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 125.
+  DEBUG    root:machine.py:24 {{TICK: 293, PC: 18, ADDR: 125, ACC: 25, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 294, PC: 19, ADDR: 125, ACC: 25, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 294, PC: 19, ADDR: 125, ACC: 25, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 19 - Opcode: jmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: jmp at PC: 19
+  DEBUG    root:machine.py:54 JMP to address: 12
+  DEBUG    root:machine.py:24 {{TICK: 295, PC: 12, ADDR: 125, ACC: 25, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 295, PC: 12, ADDR: 125, ACC: 25, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 12 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 12
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: indirect
+  DEBUG    root:machine.py:24 {{TICK: 296, PC: 12, ADDR: 125, ACC: 25, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 297, PC: 12, ADDR: 125, ACC: 25, DR: 25, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 298, PC: 12, ADDR: 25, ACC: 25, DR: 25, DA: 25}}
+  DEBUG    root:machine.py:24 {{TICK: 299, PC: 12, ADDR: 25, ACC: \u0000, DR: 25, DA: 25}}
+  DEBUG    root:machine.py:24 {{TICK: 300, PC: 13, ADDR: 25, ACC: \u0000, DR: 25, DA: 25}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 300, PC: 13, ADDR: 25, ACC: \u0000, DR: 25, DA: 25}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 13 - Opcode: cmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: cmp at PC: 13
+  DEBUG    root:machine.py:24 {{TICK: 301, PC: 13, ADDR: 25, ACC: \u0000, DR: \u0000, DA: 25}}
+  DEBUG    root:machine.py:24 {{TICK: 302, PC: 13, ADDR: 25, ACC: \u0000, DR: \u0000, DA: 25}}
+  DEBUG    root:machine.py:24 {{TICK: 303, PC: 14, ADDR: 25, ACC: \u0000, DR: \u0000, DA: 25}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 303, PC: 14, ADDR: 25, ACC: \u0000, DR: \u0000, DA: 25}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 14 - Opcode: je
+  DEBUG    root:machine.py:46 Executing control flow instruction: je at PC: 14
+  DEBUG    root:machine.py:62 JE condition met. Jumping to address: 20
+  DEBUG    root:machine.py:24 {{TICK: 304, PC: 20, ADDR: 25, ACC: \u0000, DR: \u0000, DA: 25}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 304, PC: 20, ADDR: 25, ACC: \u0000, DR: \u0000, DA: 25}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 20 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 20
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 305, PC: 20, ADDR: 0, ACC: \u0000, DR: \u0000, DA: 0}}
+  DEBUG    root:machine.py:24 {{TICK: 306, PC: 20, ADDR: 0, ACC: 1, DR: \u0000, DA: 0}}
+  DEBUG    root:machine.py:24 {{TICK: 307, PC: 21, ADDR: 0, ACC: 1, DR: \u0000, DA: 0}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 307, PC: 21, ADDR: 0, ACC: 1, DR: \u0000, DA: 0}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 21 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 21
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 308, PC: 21, ADDR: 125, ACC: 1, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 125.
+  DEBUG    root:machine.py:24 {{TICK: 309, PC: 21, ADDR: 125, ACC: 1, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 310, PC: 22, ADDR: 125, ACC: 1, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 310, PC: 22, ADDR: 125, ACC: 1, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 22 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 22
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: indirect
+  DEBUG    root:machine.py:24 {{TICK: 311, PC: 22, ADDR: 125, ACC: 1, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 312, PC: 22, ADDR: 125, ACC: 1, DR: 1, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 313, PC: 22, ADDR: 1, ACC: 1, DR: 1, DA: 1}}
+  DEBUG    root:machine.py:24 {{TICK: 314, PC: 22, ADDR: 1, ACC: r, DR: 1, DA: 1}}
+  DEBUG    root:machine.py:24 {{TICK: 315, PC: 23, ADDR: 1, ACC: r, DR: 1, DA: 1}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 315, PC: 23, ADDR: 1, ACC: r, DR: 1, DA: 1}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 23 - Opcode: cmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: cmp at PC: 23
+  DEBUG    root:machine.py:24 {{TICK: 316, PC: 23, ADDR: 1, ACC: r, DR: \u0000, DA: 1}}
+  DEBUG    root:machine.py:24 {{TICK: 317, PC: 23, ADDR: 1, ACC: r, DR: \u0000, DA: 1}}
+  DEBUG    root:machine.py:24 {{TICK: 318, PC: 24, ADDR: 1, ACC: r, DR: \u0000, DA: 1}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 318, PC: 24, ADDR: 1, ACC: r, DR: \u0000, DA: 1}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 24 - Opcode: je
+  DEBUG    root:machine.py:46 Executing control flow instruction: je at PC: 24
+  DEBUG    root:machine.py:66 JE condition not met. Incrementing PC.
+  DEBUG    root:machine.py:24 {{TICK: 319, PC: 25, ADDR: 1, ACC: r, DR: \u0000, DA: 1}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 319, PC: 25, ADDR: 1, ACC: r, DR: \u0000, DA: 1}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 25 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 25
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 320, PC: 25, ADDR: 127, ACC: r, DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 127.
+  INFO     root:data_path.py:136 New output detected at address 127: r
+  INFO     root:data_path.py:139 OUTPUT: ['H', 'e', 'l', 'l', 'o', ',', ' ', 'r']
+  DEBUG    root:machine.py:24 {{TICK: 321, PC: 25, ADDR: 127, ACC: r, DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:24 {{TICK: 322, PC: 26, ADDR: 127, ACC: r, DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 322, PC: 26, ADDR: 127, ACC: r, DR: \u0000, DA: 127}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 26 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 26
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 323, PC: 26, ADDR: 125, ACC: r, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 324, PC: 26, ADDR: 125, ACC: 1, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 325, PC: 27, ADDR: 125, ACC: 1, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 325, PC: 27, ADDR: 125, ACC: 1, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 27 - Opcode: inc
+  DEBUG    root:machine.py:46 Executing control flow instruction: inc at PC: 27
+  DEBUG    root:machine.py:24 {{TICK: 326, PC: 27, ADDR: 125, ACC: 1, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 327, PC: 27, ADDR: 125, ACC: 2, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 328, PC: 28, ADDR: 125, ACC: 2, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 328, PC: 28, ADDR: 125, ACC: 2, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 28 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 28
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 329, PC: 28, ADDR: 125, ACC: 2, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 125.
+  DEBUG    root:machine.py:24 {{TICK: 330, PC: 28, ADDR: 125, ACC: 2, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 331, PC: 29, ADDR: 125, ACC: 2, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 331, PC: 29, ADDR: 125, ACC: 2, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 29 - Opcode: jmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: jmp at PC: 29
+  DEBUG    root:machine.py:54 JMP to address: 22
+  DEBUG    root:machine.py:24 {{TICK: 332, PC: 22, ADDR: 125, ACC: 2, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 332, PC: 22, ADDR: 125, ACC: 2, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 22 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 22
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: indirect
+  DEBUG    root:machine.py:24 {{TICK: 333, PC: 22, ADDR: 125, ACC: 2, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 334, PC: 22, ADDR: 125, ACC: 2, DR: 2, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 335, PC: 22, ADDR: 2, ACC: 2, DR: 2, DA: 2}}
+  DEBUG    root:machine.py:24 {{TICK: 336, PC: 22, ADDR: 2, ACC: a, DR: 2, DA: 2}}
+  DEBUG    root:machine.py:24 {{TICK: 337, PC: 23, ADDR: 2, ACC: a, DR: 2, DA: 2}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 337, PC: 23, ADDR: 2, ACC: a, DR: 2, DA: 2}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 23 - Opcode: cmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: cmp at PC: 23
+  DEBUG    root:machine.py:24 {{TICK: 338, PC: 23, ADDR: 2, ACC: a, DR: \u0000, DA: 2}}
+  DEBUG    root:machine.py:24 {{TICK: 339, PC: 23, ADDR: 2, ACC: a, DR: \u0000, DA: 2}}
+  DEBUG    root:machine.py:24 {{TICK: 340, PC: 24, ADDR: 2, ACC: a, DR: \u0000, DA: 2}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 340, PC: 24, ADDR: 2, ACC: a, DR: \u0000, DA: 2}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 24 - Opcode: je
+  DEBUG    root:machine.py:46 Executing control flow instruction: je at PC: 24
+  DEBUG    root:machine.py:66 JE condition not met. Incrementing PC.
+  DEBUG    root:machine.py:24 {{TICK: 341, PC: 25, ADDR: 2, ACC: a, DR: \u0000, DA: 2}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 341, PC: 25, ADDR: 2, ACC: a, DR: \u0000, DA: 2}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 25 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 25
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 342, PC: 25, ADDR: 127, ACC: a, DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 127.
+  INFO     root:data_path.py:136 New output detected at address 127: a
+  INFO     root:data_path.py:139 OUTPUT: ['H', 'e', 'l', 'l', 'o', ',', ' ', 'r', 'a']
+  DEBUG    root:machine.py:24 {{TICK: 343, PC: 25, ADDR: 127, ACC: a, DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:24 {{TICK: 344, PC: 26, ADDR: 127, ACC: a, DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 344, PC: 26, ADDR: 127, ACC: a, DR: \u0000, DA: 127}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 26 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 26
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 345, PC: 26, ADDR: 125, ACC: a, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 346, PC: 26, ADDR: 125, ACC: 2, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 347, PC: 27, ADDR: 125, ACC: 2, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 347, PC: 27, ADDR: 125, ACC: 2, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 27 - Opcode: inc
+  DEBUG    root:machine.py:46 Executing control flow instruction: inc at PC: 27
+  DEBUG    root:machine.py:24 {{TICK: 348, PC: 27, ADDR: 125, ACC: 2, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 349, PC: 27, ADDR: 125, ACC: 3, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 350, PC: 28, ADDR: 125, ACC: 3, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 350, PC: 28, ADDR: 125, ACC: 3, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 28 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 28
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 351, PC: 28, ADDR: 125, ACC: 3, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 125.
+  DEBUG    root:machine.py:24 {{TICK: 352, PC: 28, ADDR: 125, ACC: 3, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 353, PC: 29, ADDR: 125, ACC: 3, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 353, PC: 29, ADDR: 125, ACC: 3, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 29 - Opcode: jmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: jmp at PC: 29
+  DEBUG    root:machine.py:54 JMP to address: 22
+  DEBUG    root:machine.py:24 {{TICK: 354, PC: 22, ADDR: 125, ACC: 3, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 354, PC: 22, ADDR: 125, ACC: 3, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 22 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 22
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: indirect
+  DEBUG    root:machine.py:24 {{TICK: 355, PC: 22, ADDR: 125, ACC: 3, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 356, PC: 22, ADDR: 125, ACC: 3, DR: 3, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 357, PC: 22, ADDR: 3, ACC: 3, DR: 3, DA: 3}}
+  DEBUG    root:machine.py:24 {{TICK: 358, PC: 22, ADDR: 3, ACC: h, DR: 3, DA: 3}}
+  DEBUG    root:machine.py:24 {{TICK: 359, PC: 23, ADDR: 3, ACC: h, DR: 3, DA: 3}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 359, PC: 23, ADDR: 3, ACC: h, DR: 3, DA: 3}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 23 - Opcode: cmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: cmp at PC: 23
+  DEBUG    root:machine.py:24 {{TICK: 360, PC: 23, ADDR: 3, ACC: h, DR: \u0000, DA: 3}}
+  DEBUG    root:machine.py:24 {{TICK: 361, PC: 23, ADDR: 3, ACC: h, DR: \u0000, DA: 3}}
+  DEBUG    root:machine.py:24 {{TICK: 362, PC: 24, ADDR: 3, ACC: h, DR: \u0000, DA: 3}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 362, PC: 24, ADDR: 3, ACC: h, DR: \u0000, DA: 3}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 24 - Opcode: je
+  DEBUG    root:machine.py:46 Executing control flow instruction: je at PC: 24
+  DEBUG    root:machine.py:66 JE condition not met. Incrementing PC.
+  DEBUG    root:machine.py:24 {{TICK: 363, PC: 25, ADDR: 3, ACC: h, DR: \u0000, DA: 3}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 363, PC: 25, ADDR: 3, ACC: h, DR: \u0000, DA: 3}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 25 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 25
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 364, PC: 25, ADDR: 127, ACC: h, DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 127.
+  INFO     root:data_path.py:136 New output detected at address 127: h
+  INFO     root:data_path.py:139 OUTPUT: ['H', 'e', 'l', 'l', 'o', ',', ' ', 'r', 'a', 'h']
+  DEBUG    root:machine.py:24 {{TICK: 365, PC: 25, ADDR: 127, ACC: h, DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:24 {{TICK: 366, PC: 26, ADDR: 127, ACC: h, DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 366, PC: 26, ADDR: 127, ACC: h, DR: \u0000, DA: 127}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 26 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 26
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 367, PC: 26, ADDR: 125, ACC: h, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 368, PC: 26, ADDR: 125, ACC: 3, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 369, PC: 27, ADDR: 125, ACC: 3, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 369, PC: 27, ADDR: 125, ACC: 3, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 27 - Opcode: inc
+  DEBUG    root:machine.py:46 Executing control flow instruction: inc at PC: 27
+  DEBUG    root:machine.py:24 {{TICK: 370, PC: 27, ADDR: 125, ACC: 3, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 371, PC: 27, ADDR: 125, ACC: 4, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 372, PC: 28, ADDR: 125, ACC: 4, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 372, PC: 28, ADDR: 125, ACC: 4, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 28 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 28
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 373, PC: 28, ADDR: 125, ACC: 4, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 125.
+  DEBUG    root:machine.py:24 {{TICK: 374, PC: 28, ADDR: 125, ACC: 4, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 375, PC: 29, ADDR: 125, ACC: 4, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 375, PC: 29, ADDR: 125, ACC: 4, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 29 - Opcode: jmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: jmp at PC: 29
+  DEBUG    root:machine.py:54 JMP to address: 22
+  DEBUG    root:machine.py:24 {{TICK: 376, PC: 22, ADDR: 125, ACC: 4, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 376, PC: 22, ADDR: 125, ACC: 4, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 22 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 22
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: indirect
+  DEBUG    root:machine.py:24 {{TICK: 377, PC: 22, ADDR: 125, ACC: 4, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 378, PC: 22, ADDR: 125, ACC: 4, DR: 4, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 379, PC: 22, ADDR: 4, ACC: 4, DR: 4, DA: 4}}
+  DEBUG    root:machine.py:24 {{TICK: 380, PC: 22, ADDR: 4, ACC: i, DR: 4, DA: 4}}
+  DEBUG    root:machine.py:24 {{TICK: 381, PC: 23, ADDR: 4, ACC: i, DR: 4, DA: 4}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 381, PC: 23, ADDR: 4, ACC: i, DR: 4, DA: 4}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 23 - Opcode: cmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: cmp at PC: 23
+  DEBUG    root:machine.py:24 {{TICK: 382, PC: 23, ADDR: 4, ACC: i, DR: \u0000, DA: 4}}
+  DEBUG    root:machine.py:24 {{TICK: 383, PC: 23, ADDR: 4, ACC: i, DR: \u0000, DA: 4}}
+  DEBUG    root:machine.py:24 {{TICK: 384, PC: 24, ADDR: 4, ACC: i, DR: \u0000, DA: 4}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 384, PC: 24, ADDR: 4, ACC: i, DR: \u0000, DA: 4}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 24 - Opcode: je
+  DEBUG    root:machine.py:46 Executing control flow instruction: je at PC: 24
+  DEBUG    root:machine.py:66 JE condition not met. Incrementing PC.
+  DEBUG    root:machine.py:24 {{TICK: 385, PC: 25, ADDR: 4, ACC: i, DR: \u0000, DA: 4}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 385, PC: 25, ADDR: 4, ACC: i, DR: \u0000, DA: 4}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 25 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 25
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 386, PC: 25, ADDR: 127, ACC: i, DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 127.
+  INFO     root:data_path.py:136 New output detected at address 127: i
+  INFO     root:data_path.py:139 OUTPUT: ['H', 'e', 'l', 'l', 'o', ',', ' ', 'r', 'a', 'h', 'i']
+  DEBUG    root:machine.py:24 {{TICK: 387, PC: 25, ADDR: 127, ACC: i, DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:24 {{TICK: 388, PC: 26, ADDR: 127, ACC: i, DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 388, PC: 26, ADDR: 127, ACC: i, DR: \u0000, DA: 127}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 26 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 26
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 389, PC: 26, ADDR: 125, ACC: i, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 390, PC: 26, ADDR: 125, ACC: 4, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 391, PC: 27, ADDR: 125, ACC: 4, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 391, PC: 27, ADDR: 125, ACC: 4, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 27 - Opcode: inc
+  DEBUG    root:machine.py:46 Executing control flow instruction: inc at PC: 27
+  DEBUG    root:machine.py:24 {{TICK: 392, PC: 27, ADDR: 125, ACC: 4, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 393, PC: 27, ADDR: 125, ACC: 5, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 394, PC: 28, ADDR: 125, ACC: 5, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 394, PC: 28, ADDR: 125, ACC: 5, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 28 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 28
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 395, PC: 28, ADDR: 125, ACC: 5, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 125.
+  DEBUG    root:machine.py:24 {{TICK: 396, PC: 28, ADDR: 125, ACC: 5, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 397, PC: 29, ADDR: 125, ACC: 5, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 397, PC: 29, ADDR: 125, ACC: 5, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 29 - Opcode: jmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: jmp at PC: 29
+  DEBUG    root:machine.py:54 JMP to address: 22
+  DEBUG    root:machine.py:24 {{TICK: 398, PC: 22, ADDR: 125, ACC: 5, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 398, PC: 22, ADDR: 125, ACC: 5, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 22 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 22
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: indirect
+  DEBUG    root:machine.py:24 {{TICK: 399, PC: 22, ADDR: 125, ACC: 5, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 400, PC: 22, ADDR: 125, ACC: 5, DR: 5, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 401, PC: 22, ADDR: 5, ACC: 5, DR: 5, DA: 5}}
+  DEBUG    root:machine.py:24 {{TICK: 402, PC: 22, ADDR: 5, ACC: m, DR: 5, DA: 5}}
+  DEBUG    root:machine.py:24 {{TICK: 403, PC: 23, ADDR: 5, ACC: m, DR: 5, DA: 5}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 403, PC: 23, ADDR: 5, ACC: m, DR: 5, DA: 5}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 23 - Opcode: cmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: cmp at PC: 23
+  DEBUG    root:machine.py:24 {{TICK: 404, PC: 23, ADDR: 5, ACC: m, DR: \u0000, DA: 5}}
+  DEBUG    root:machine.py:24 {{TICK: 405, PC: 23, ADDR: 5, ACC: m, DR: \u0000, DA: 5}}
+  DEBUG    root:machine.py:24 {{TICK: 406, PC: 24, ADDR: 5, ACC: m, DR: \u0000, DA: 5}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 406, PC: 24, ADDR: 5, ACC: m, DR: \u0000, DA: 5}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 24 - Opcode: je
+  DEBUG    root:machine.py:46 Executing control flow instruction: je at PC: 24
+  DEBUG    root:machine.py:66 JE condition not met. Incrementing PC.
+  DEBUG    root:machine.py:24 {{TICK: 407, PC: 25, ADDR: 5, ACC: m, DR: \u0000, DA: 5}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 407, PC: 25, ADDR: 5, ACC: m, DR: \u0000, DA: 5}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 25 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 25
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 408, PC: 25, ADDR: 127, ACC: m, DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 127.
+  INFO     root:data_path.py:136 New output detected at address 127: m
+  INFO     root:data_path.py:139 OUTPUT: ['H', 'e', 'l', 'l', 'o', ',', ' ', 'r', 'a', 'h', 'i', 'm']
+  DEBUG    root:machine.py:24 {{TICK: 409, PC: 25, ADDR: 127, ACC: m, DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:24 {{TICK: 410, PC: 26, ADDR: 127, ACC: m, DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 410, PC: 26, ADDR: 127, ACC: m, DR: \u0000, DA: 127}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 26 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 26
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 411, PC: 26, ADDR: 125, ACC: m, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 412, PC: 26, ADDR: 125, ACC: 5, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 413, PC: 27, ADDR: 125, ACC: 5, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 413, PC: 27, ADDR: 125, ACC: 5, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 27 - Opcode: inc
+  DEBUG    root:machine.py:46 Executing control flow instruction: inc at PC: 27
+  DEBUG    root:machine.py:24 {{TICK: 414, PC: 27, ADDR: 125, ACC: 5, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 415, PC: 27, ADDR: 125, ACC: 6, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 416, PC: 28, ADDR: 125, ACC: 6, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 416, PC: 28, ADDR: 125, ACC: 6, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 28 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 28
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 417, PC: 28, ADDR: 125, ACC: 6, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 125.
+  DEBUG    root:machine.py:24 {{TICK: 418, PC: 28, ADDR: 125, ACC: 6, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 419, PC: 29, ADDR: 125, ACC: 6, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 419, PC: 29, ADDR: 125, ACC: 6, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 29 - Opcode: jmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: jmp at PC: 29
+  DEBUG    root:machine.py:54 JMP to address: 22
+  DEBUG    root:machine.py:24 {{TICK: 420, PC: 22, ADDR: 125, ACC: 6, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 420, PC: 22, ADDR: 125, ACC: 6, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 22 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 22
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: indirect
+  DEBUG    root:machine.py:24 {{TICK: 421, PC: 22, ADDR: 125, ACC: 6, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 422, PC: 22, ADDR: 125, ACC: 6, DR: 6, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 423, PC: 22, ADDR: 6, ACC: 6, DR: 6, DA: 6}}
+  DEBUG    root:machine.py:24 {{TICK: 424, PC: 22, ADDR: 6, ACC: , DR: 6, DA: 6}}
+  DEBUG    root:machine.py:24 {{TICK: 425, PC: 23, ADDR: 6, ACC: , DR: 6, DA: 6}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 425, PC: 23, ADDR: 6, ACC: , DR: 6, DA: 6}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 23 - Opcode: cmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: cmp at PC: 23
+  DEBUG    root:machine.py:24 {{TICK: 426, PC: 23, ADDR: 6, ACC: , DR: \u0000, DA: 6}}
+  DEBUG    root:machine.py:24 {{TICK: 427, PC: 23, ADDR: 6, ACC: , DR: \u0000, DA: 6}}
+  DEBUG    root:machine.py:24 {{TICK: 428, PC: 24, ADDR: 6, ACC: , DR: \u0000, DA: 6}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 428, PC: 24, ADDR: 6, ACC: , DR: \u0000, DA: 6}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 24 - Opcode: je
+  DEBUG    root:machine.py:46 Executing control flow instruction: je at PC: 24
+  DEBUG    root:machine.py:66 JE condition not met. Incrementing PC.
+  DEBUG    root:machine.py:24 {{TICK: 429, PC: 25, ADDR: 6, ACC: , DR: \u0000, DA: 6}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 429, PC: 25, ADDR: 6, ACC: , DR: \u0000, DA: 6}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 25 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 25
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 430, PC: 25, ADDR: 127, ACC: , DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 127.
+  INFO     root:data_path.py:136 New output detected at address 127: 
+  INFO     root:data_path.py:139 OUTPUT: ['H', 'e', 'l', 'l', 'o', ',', ' ', 'r', 'a', 'h', 'i', 'm', '']
+  DEBUG    root:machine.py:24 {{TICK: 431, PC: 25, ADDR: 127, ACC: , DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:24 {{TICK: 432, PC: 26, ADDR: 127, ACC: , DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 432, PC: 26, ADDR: 127, ACC: , DR: \u0000, DA: 127}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 26 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 26
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 433, PC: 26, ADDR: 125, ACC: , DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 434, PC: 26, ADDR: 125, ACC: 6, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 435, PC: 27, ADDR: 125, ACC: 6, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 435, PC: 27, ADDR: 125, ACC: 6, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 27 - Opcode: inc
+  DEBUG    root:machine.py:46 Executing control flow instruction: inc at PC: 27
+  DEBUG    root:machine.py:24 {{TICK: 436, PC: 27, ADDR: 125, ACC: 6, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 437, PC: 27, ADDR: 125, ACC: 7, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 438, PC: 28, ADDR: 125, ACC: 7, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 438, PC: 28, ADDR: 125, ACC: 7, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 28 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 28
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 439, PC: 28, ADDR: 125, ACC: 7, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 125.
+  DEBUG    root:machine.py:24 {{TICK: 440, PC: 28, ADDR: 125, ACC: 7, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 441, PC: 29, ADDR: 125, ACC: 7, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 441, PC: 29, ADDR: 125, ACC: 7, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 29 - Opcode: jmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: jmp at PC: 29
+  DEBUG    root:machine.py:54 JMP to address: 22
+  DEBUG    root:machine.py:24 {{TICK: 442, PC: 22, ADDR: 125, ACC: 7, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 442, PC: 22, ADDR: 125, ACC: 7, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 22 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 22
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: indirect
+  DEBUG    root:machine.py:24 {{TICK: 443, PC: 22, ADDR: 125, ACC: 7, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 444, PC: 22, ADDR: 125, ACC: 7, DR: 7, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 445, PC: 22, ADDR: 7, ACC: 7, DR: 7, DA: 7}}
+  DEBUG    root:machine.py:24 {{TICK: 446, PC: 22, ADDR: 7, ACC: , DR: 7, DA: 7}}
+  DEBUG    root:machine.py:24 {{TICK: 447, PC: 23, ADDR: 7, ACC: , DR: 7, DA: 7}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 447, PC: 23, ADDR: 7, ACC: , DR: 7, DA: 7}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 23 - Opcode: cmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: cmp at PC: 23
+  DEBUG    root:machine.py:24 {{TICK: 448, PC: 23, ADDR: 7, ACC: , DR: \u0000, DA: 7}}
+  DEBUG    root:machine.py:24 {{TICK: 449, PC: 23, ADDR: 7, ACC: , DR: \u0000, DA: 7}}
+  DEBUG    root:machine.py:24 {{TICK: 450, PC: 24, ADDR: 7, ACC: , DR: \u0000, DA: 7}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 450, PC: 24, ADDR: 7, ACC: , DR: \u0000, DA: 7}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 24 - Opcode: je
+  DEBUG    root:machine.py:46 Executing control flow instruction: je at PC: 24
+  DEBUG    root:machine.py:66 JE condition not met. Incrementing PC.
+  DEBUG    root:machine.py:24 {{TICK: 451, PC: 25, ADDR: 7, ACC: , DR: \u0000, DA: 7}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 451, PC: 25, ADDR: 7, ACC: , DR: \u0000, DA: 7}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 25 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 25
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 452, PC: 25, ADDR: 127, ACC: , DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 127.
+  INFO     root:data_path.py:136 New output detected at address 127: 
+  INFO     root:data_path.py:139 OUTPUT: ['H', 'e', 'l', 'l', 'o', ',', ' ', 'r', 'a', 'h', 'i', 'm', '', '']
+  DEBUG    root:machine.py:24 {{TICK: 453, PC: 25, ADDR: 127, ACC: , DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:24 {{TICK: 454, PC: 26, ADDR: 127, ACC: , DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 454, PC: 26, ADDR: 127, ACC: , DR: \u0000, DA: 127}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 26 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 26
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 455, PC: 26, ADDR: 125, ACC: , DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 456, PC: 26, ADDR: 125, ACC: 7, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 457, PC: 27, ADDR: 125, ACC: 7, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 457, PC: 27, ADDR: 125, ACC: 7, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 27 - Opcode: inc
+  DEBUG    root:machine.py:46 Executing control flow instruction: inc at PC: 27
+  DEBUG    root:machine.py:24 {{TICK: 458, PC: 27, ADDR: 125, ACC: 7, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 459, PC: 27, ADDR: 125, ACC: 8, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 460, PC: 28, ADDR: 125, ACC: 8, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 460, PC: 28, ADDR: 125, ACC: 8, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 28 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 28
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 461, PC: 28, ADDR: 125, ACC: 8, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 125.
+  DEBUG    root:machine.py:24 {{TICK: 462, PC: 28, ADDR: 125, ACC: 8, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 463, PC: 29, ADDR: 125, ACC: 8, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 463, PC: 29, ADDR: 125, ACC: 8, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 29 - Opcode: jmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: jmp at PC: 29
+  DEBUG    root:machine.py:54 JMP to address: 22
+  DEBUG    root:machine.py:24 {{TICK: 464, PC: 22, ADDR: 125, ACC: 8, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 464, PC: 22, ADDR: 125, ACC: 8, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 22 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 22
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: indirect
+  DEBUG    root:machine.py:24 {{TICK: 465, PC: 22, ADDR: 125, ACC: 8, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 466, PC: 22, ADDR: 125, ACC: 8, DR: 8, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 467, PC: 22, ADDR: 8, ACC: 8, DR: 8, DA: 8}}
+  DEBUG    root:machine.py:24 {{TICK: 468, PC: 22, ADDR: 8, ACC: , DR: 8, DA: 8}}
+  DEBUG    root:machine.py:24 {{TICK: 469, PC: 23, ADDR: 8, ACC: , DR: 8, DA: 8}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 469, PC: 23, ADDR: 8, ACC: , DR: 8, DA: 8}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 23 - Opcode: cmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: cmp at PC: 23
+  DEBUG    root:machine.py:24 {{TICK: 470, PC: 23, ADDR: 8, ACC: , DR: \u0000, DA: 8}}
+  DEBUG    root:machine.py:24 {{TICK: 471, PC: 23, ADDR: 8, ACC: , DR: \u0000, DA: 8}}
+  DEBUG    root:machine.py:24 {{TICK: 472, PC: 24, ADDR: 8, ACC: , DR: \u0000, DA: 8}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 472, PC: 24, ADDR: 8, ACC: , DR: \u0000, DA: 8}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 24 - Opcode: je
+  DEBUG    root:machine.py:46 Executing control flow instruction: je at PC: 24
+  DEBUG    root:machine.py:66 JE condition not met. Incrementing PC.
+  DEBUG    root:machine.py:24 {{TICK: 473, PC: 25, ADDR: 8, ACC: , DR: \u0000, DA: 8}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 473, PC: 25, ADDR: 8, ACC: , DR: \u0000, DA: 8}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 25 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 25
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 474, PC: 25, ADDR: 127, ACC: , DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 127.
+  INFO     root:data_path.py:136 New output detected at address 127: 
+  INFO     root:data_path.py:139 OUTPUT: ['H', 'e', 'l', 'l', 'o', ',', ' ', 'r', 'a', 'h', 'i', 'm', '', '', '']
+  DEBUG    root:machine.py:24 {{TICK: 475, PC: 25, ADDR: 127, ACC: , DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:24 {{TICK: 476, PC: 26, ADDR: 127, ACC: , DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 476, PC: 26, ADDR: 127, ACC: , DR: \u0000, DA: 127}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 26 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 26
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 477, PC: 26, ADDR: 125, ACC: , DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 478, PC: 26, ADDR: 125, ACC: 8, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 479, PC: 27, ADDR: 125, ACC: 8, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 479, PC: 27, ADDR: 125, ACC: 8, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 27 - Opcode: inc
+  DEBUG    root:machine.py:46 Executing control flow instruction: inc at PC: 27
+  DEBUG    root:machine.py:24 {{TICK: 480, PC: 27, ADDR: 125, ACC: 8, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 481, PC: 27, ADDR: 125, ACC: 9, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 482, PC: 28, ADDR: 125, ACC: 9, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 482, PC: 28, ADDR: 125, ACC: 9, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 28 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 28
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 483, PC: 28, ADDR: 125, ACC: 9, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 125.
+  DEBUG    root:machine.py:24 {{TICK: 484, PC: 28, ADDR: 125, ACC: 9, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 485, PC: 29, ADDR: 125, ACC: 9, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 485, PC: 29, ADDR: 125, ACC: 9, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 29 - Opcode: jmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: jmp at PC: 29
+  DEBUG    root:machine.py:54 JMP to address: 22
+  DEBUG    root:machine.py:24 {{TICK: 486, PC: 22, ADDR: 125, ACC: 9, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 486, PC: 22, ADDR: 125, ACC: 9, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 22 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 22
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: indirect
+  DEBUG    root:machine.py:24 {{TICK: 487, PC: 22, ADDR: 125, ACC: 9, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 488, PC: 22, ADDR: 125, ACC: 9, DR: 9, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 489, PC: 22, ADDR: 9, ACC: 9, DR: 9, DA: 9}}
+  DEBUG    root:machine.py:24 {{TICK: 490, PC: 22, ADDR: 9, ACC: , DR: 9, DA: 9}}
+  DEBUG    root:machine.py:24 {{TICK: 491, PC: 23, ADDR: 9, ACC: , DR: 9, DA: 9}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 491, PC: 23, ADDR: 9, ACC: , DR: 9, DA: 9}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 23 - Opcode: cmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: cmp at PC: 23
+  DEBUG    root:machine.py:24 {{TICK: 492, PC: 23, ADDR: 9, ACC: , DR: \u0000, DA: 9}}
+  DEBUG    root:machine.py:24 {{TICK: 493, PC: 23, ADDR: 9, ACC: , DR: \u0000, DA: 9}}
+  DEBUG    root:machine.py:24 {{TICK: 494, PC: 24, ADDR: 9, ACC: , DR: \u0000, DA: 9}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 494, PC: 24, ADDR: 9, ACC: , DR: \u0000, DA: 9}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 24 - Opcode: je
+  DEBUG    root:machine.py:46 Executing control flow instruction: je at PC: 24
+  DEBUG    root:machine.py:66 JE condition not met. Incrementing PC.
+  DEBUG    root:machine.py:24 {{TICK: 495, PC: 25, ADDR: 9, ACC: , DR: \u0000, DA: 9}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 495, PC: 25, ADDR: 9, ACC: , DR: \u0000, DA: 9}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 25 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 25
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 496, PC: 25, ADDR: 127, ACC: , DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 127.
+  INFO     root:data_path.py:136 New output detected at address 127: 
+  INFO     root:data_path.py:139 OUTPUT: ['H', 'e', 'l', 'l', 'o', ',', ' ', 'r', 'a', 'h', 'i', 'm', '', '', '', '']
+  DEBUG    root:machine.py:24 {{TICK: 497, PC: 25, ADDR: 127, ACC: , DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:24 {{TICK: 498, PC: 26, ADDR: 127, ACC: , DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 498, PC: 26, ADDR: 127, ACC: , DR: \u0000, DA: 127}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 26 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 26
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 499, PC: 26, ADDR: 125, ACC: , DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 500, PC: 26, ADDR: 125, ACC: 9, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 501, PC: 27, ADDR: 125, ACC: 9, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 501, PC: 27, ADDR: 125, ACC: 9, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 27 - Opcode: inc
+  DEBUG    root:machine.py:46 Executing control flow instruction: inc at PC: 27
+  DEBUG    root:machine.py:24 {{TICK: 502, PC: 27, ADDR: 125, ACC: 9, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 503, PC: 27, ADDR: 125, ACC: 10, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 504, PC: 28, ADDR: 125, ACC: 10, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 504, PC: 28, ADDR: 125, ACC: 10, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 28 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 28
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 505, PC: 28, ADDR: 125, ACC: 10, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 125.
+  DEBUG    root:machine.py:24 {{TICK: 506, PC: 28, ADDR: 125, ACC: 10, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 507, PC: 29, ADDR: 125, ACC: 10, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 507, PC: 29, ADDR: 125, ACC: 10, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 29 - Opcode: jmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: jmp at PC: 29
+  DEBUG    root:machine.py:54 JMP to address: 22
+  DEBUG    root:machine.py:24 {{TICK: 508, PC: 22, ADDR: 125, ACC: 10, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 508, PC: 22, ADDR: 125, ACC: 10, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 22 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 22
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: indirect
+  DEBUG    root:machine.py:24 {{TICK: 509, PC: 22, ADDR: 125, ACC: 10, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 510, PC: 22, ADDR: 125, ACC: 10, DR: 10, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 511, PC: 22, ADDR: 10, ACC: 10, DR: 10, DA: 10}}
+  DEBUG    root:machine.py:24 {{TICK: 512, PC: 22, ADDR: 10, ACC: , DR: 10, DA: 10}}
+  DEBUG    root:machine.py:24 {{TICK: 513, PC: 23, ADDR: 10, ACC: , DR: 10, DA: 10}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 513, PC: 23, ADDR: 10, ACC: , DR: 10, DA: 10}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 23 - Opcode: cmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: cmp at PC: 23
+  DEBUG    root:machine.py:24 {{TICK: 514, PC: 23, ADDR: 10, ACC: , DR: \u0000, DA: 10}}
+  DEBUG    root:machine.py:24 {{TICK: 515, PC: 23, ADDR: 10, ACC: , DR: \u0000, DA: 10}}
+  DEBUG    root:machine.py:24 {{TICK: 516, PC: 24, ADDR: 10, ACC: , DR: \u0000, DA: 10}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 516, PC: 24, ADDR: 10, ACC: , DR: \u0000, DA: 10}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 24 - Opcode: je
+  DEBUG    root:machine.py:46 Executing control flow instruction: je at PC: 24
+  DEBUG    root:machine.py:66 JE condition not met. Incrementing PC.
+  DEBUG    root:machine.py:24 {{TICK: 517, PC: 25, ADDR: 10, ACC: , DR: \u0000, DA: 10}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 517, PC: 25, ADDR: 10, ACC: , DR: \u0000, DA: 10}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 25 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 25
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 518, PC: 25, ADDR: 127, ACC: , DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 127.
+  INFO     root:data_path.py:136 New output detected at address 127: 
+  INFO     root:data_path.py:139 OUTPUT: ['H', 'e', 'l', 'l', 'o', ',', ' ', 'r', 'a', 'h', 'i', 'm', '', '', '', '', '']
+  DEBUG    root:machine.py:24 {{TICK: 519, PC: 25, ADDR: 127, ACC: , DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:24 {{TICK: 520, PC: 26, ADDR: 127, ACC: , DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 520, PC: 26, ADDR: 127, ACC: , DR: \u0000, DA: 127}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 26 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 26
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 521, PC: 26, ADDR: 125, ACC: , DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 522, PC: 26, ADDR: 125, ACC: 10, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 523, PC: 27, ADDR: 125, ACC: 10, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 523, PC: 27, ADDR: 125, ACC: 10, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 27 - Opcode: inc
+  DEBUG    root:machine.py:46 Executing control flow instruction: inc at PC: 27
+  DEBUG    root:machine.py:24 {{TICK: 524, PC: 27, ADDR: 125, ACC: 10, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 525, PC: 27, ADDR: 125, ACC: 11, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 526, PC: 28, ADDR: 125, ACC: 11, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 526, PC: 28, ADDR: 125, ACC: 11, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 28 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 28
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 527, PC: 28, ADDR: 125, ACC: 11, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 125.
+  DEBUG    root:machine.py:24 {{TICK: 528, PC: 28, ADDR: 125, ACC: 11, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 529, PC: 29, ADDR: 125, ACC: 11, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 529, PC: 29, ADDR: 125, ACC: 11, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 29 - Opcode: jmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: jmp at PC: 29
+  DEBUG    root:machine.py:54 JMP to address: 22
+  DEBUG    root:machine.py:24 {{TICK: 530, PC: 22, ADDR: 125, ACC: 11, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 530, PC: 22, ADDR: 125, ACC: 11, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 22 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 22
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: indirect
+  DEBUG    root:machine.py:24 {{TICK: 531, PC: 22, ADDR: 125, ACC: 11, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 532, PC: 22, ADDR: 125, ACC: 11, DR: 11, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 533, PC: 22, ADDR: 11, ACC: 11, DR: 11, DA: 11}}
+  DEBUG    root:machine.py:24 {{TICK: 534, PC: 22, ADDR: 11, ACC: , DR: 11, DA: 11}}
+  DEBUG    root:machine.py:24 {{TICK: 535, PC: 23, ADDR: 11, ACC: , DR: 11, DA: 11}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 535, PC: 23, ADDR: 11, ACC: , DR: 11, DA: 11}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 23 - Opcode: cmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: cmp at PC: 23
+  DEBUG    root:machine.py:24 {{TICK: 536, PC: 23, ADDR: 11, ACC: , DR: \u0000, DA: 11}}
+  DEBUG    root:machine.py:24 {{TICK: 537, PC: 23, ADDR: 11, ACC: , DR: \u0000, DA: 11}}
+  DEBUG    root:machine.py:24 {{TICK: 538, PC: 24, ADDR: 11, ACC: , DR: \u0000, DA: 11}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 538, PC: 24, ADDR: 11, ACC: , DR: \u0000, DA: 11}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 24 - Opcode: je
+  DEBUG    root:machine.py:46 Executing control flow instruction: je at PC: 24
+  DEBUG    root:machine.py:66 JE condition not met. Incrementing PC.
+  DEBUG    root:machine.py:24 {{TICK: 539, PC: 25, ADDR: 11, ACC: , DR: \u0000, DA: 11}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 539, PC: 25, ADDR: 11, ACC: , DR: \u0000, DA: 11}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 25 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 25
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 540, PC: 25, ADDR: 127, ACC: , DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 127.
+  INFO     root:data_path.py:136 New output detected at address 127: 
+  INFO     root:data_path.py:139 OUTPUT: ['H', 'e', 'l', 'l', 'o', ',', ' ', 'r', 'a', 'h', 'i', 'm', '', '', '', '', '', '']
+  DEBUG    root:machine.py:24 {{TICK: 541, PC: 25, ADDR: 127, ACC: , DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:24 {{TICK: 542, PC: 26, ADDR: 127, ACC: , DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 542, PC: 26, ADDR: 127, ACC: , DR: \u0000, DA: 127}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 26 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 26
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 543, PC: 26, ADDR: 125, ACC: , DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 544, PC: 26, ADDR: 125, ACC: 11, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 545, PC: 27, ADDR: 125, ACC: 11, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 545, PC: 27, ADDR: 125, ACC: 11, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 27 - Opcode: inc
+  DEBUG    root:machine.py:46 Executing control flow instruction: inc at PC: 27
+  DEBUG    root:machine.py:24 {{TICK: 546, PC: 27, ADDR: 125, ACC: 11, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 547, PC: 27, ADDR: 125, ACC: 12, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 548, PC: 28, ADDR: 125, ACC: 12, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 548, PC: 28, ADDR: 125, ACC: 12, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 28 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 28
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 549, PC: 28, ADDR: 125, ACC: 12, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 125.
+  DEBUG    root:machine.py:24 {{TICK: 550, PC: 28, ADDR: 125, ACC: 12, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 551, PC: 29, ADDR: 125, ACC: 12, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 551, PC: 29, ADDR: 125, ACC: 12, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 29 - Opcode: jmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: jmp at PC: 29
+  DEBUG    root:machine.py:54 JMP to address: 22
+  DEBUG    root:machine.py:24 {{TICK: 552, PC: 22, ADDR: 125, ACC: 12, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 552, PC: 22, ADDR: 125, ACC: 12, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 22 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 22
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: indirect
+  DEBUG    root:machine.py:24 {{TICK: 553, PC: 22, ADDR: 125, ACC: 12, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 554, PC: 22, ADDR: 125, ACC: 12, DR: 12, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 555, PC: 22, ADDR: 12, ACC: 12, DR: 12, DA: 12}}
+  DEBUG    root:machine.py:24 {{TICK: 556, PC: 22, ADDR: 12, ACC: , DR: 12, DA: 12}}
+  DEBUG    root:machine.py:24 {{TICK: 557, PC: 23, ADDR: 12, ACC: , DR: 12, DA: 12}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 557, PC: 23, ADDR: 12, ACC: , DR: 12, DA: 12}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 23 - Opcode: cmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: cmp at PC: 23
+  DEBUG    root:machine.py:24 {{TICK: 558, PC: 23, ADDR: 12, ACC: , DR: \u0000, DA: 12}}
+  DEBUG    root:machine.py:24 {{TICK: 559, PC: 23, ADDR: 12, ACC: , DR: \u0000, DA: 12}}
+  DEBUG    root:machine.py:24 {{TICK: 560, PC: 24, ADDR: 12, ACC: , DR: \u0000, DA: 12}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 560, PC: 24, ADDR: 12, ACC: , DR: \u0000, DA: 12}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 24 - Opcode: je
+  DEBUG    root:machine.py:46 Executing control flow instruction: je at PC: 24
+  DEBUG    root:machine.py:66 JE condition not met. Incrementing PC.
+  DEBUG    root:machine.py:24 {{TICK: 561, PC: 25, ADDR: 12, ACC: , DR: \u0000, DA: 12}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 561, PC: 25, ADDR: 12, ACC: , DR: \u0000, DA: 12}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 25 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 25
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 562, PC: 25, ADDR: 127, ACC: , DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 127.
+  INFO     root:data_path.py:136 New output detected at address 127: 
+  INFO     root:data_path.py:139 OUTPUT: ['H', 'e', 'l', 'l', 'o', ',', ' ', 'r', 'a', 'h', 'i', 'm', '', '', '', '', '', '', '']
+  DEBUG    root:machine.py:24 {{TICK: 563, PC: 25, ADDR: 127, ACC: , DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:24 {{TICK: 564, PC: 26, ADDR: 127, ACC: , DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 564, PC: 26, ADDR: 127, ACC: , DR: \u0000, DA: 127}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 26 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 26
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 565, PC: 26, ADDR: 125, ACC: , DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 566, PC: 26, ADDR: 125, ACC: 12, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 567, PC: 27, ADDR: 125, ACC: 12, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 567, PC: 27, ADDR: 125, ACC: 12, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 27 - Opcode: inc
+  DEBUG    root:machine.py:46 Executing control flow instruction: inc at PC: 27
+  DEBUG    root:machine.py:24 {{TICK: 568, PC: 27, ADDR: 125, ACC: 12, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 569, PC: 27, ADDR: 125, ACC: 13, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 570, PC: 28, ADDR: 125, ACC: 13, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 570, PC: 28, ADDR: 125, ACC: 13, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 28 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 28
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 571, PC: 28, ADDR: 125, ACC: 13, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 125.
+  DEBUG    root:machine.py:24 {{TICK: 572, PC: 28, ADDR: 125, ACC: 13, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 573, PC: 29, ADDR: 125, ACC: 13, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 573, PC: 29, ADDR: 125, ACC: 13, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 29 - Opcode: jmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: jmp at PC: 29
+  DEBUG    root:machine.py:54 JMP to address: 22
+  DEBUG    root:machine.py:24 {{TICK: 574, PC: 22, ADDR: 125, ACC: 13, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 574, PC: 22, ADDR: 125, ACC: 13, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 22 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 22
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: indirect
+  DEBUG    root:machine.py:24 {{TICK: 575, PC: 22, ADDR: 125, ACC: 13, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 576, PC: 22, ADDR: 125, ACC: 13, DR: 13, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 577, PC: 22, ADDR: 13, ACC: 13, DR: 13, DA: 13}}
+  DEBUG    root:machine.py:24 {{TICK: 578, PC: 22, ADDR: 13, ACC: , DR: 13, DA: 13}}
+  DEBUG    root:machine.py:24 {{TICK: 579, PC: 23, ADDR: 13, ACC: , DR: 13, DA: 13}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 579, PC: 23, ADDR: 13, ACC: , DR: 13, DA: 13}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 23 - Opcode: cmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: cmp at PC: 23
+  DEBUG    root:machine.py:24 {{TICK: 580, PC: 23, ADDR: 13, ACC: , DR: \u0000, DA: 13}}
+  DEBUG    root:machine.py:24 {{TICK: 581, PC: 23, ADDR: 13, ACC: , DR: \u0000, DA: 13}}
+  DEBUG    root:machine.py:24 {{TICK: 582, PC: 24, ADDR: 13, ACC: , DR: \u0000, DA: 13}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 582, PC: 24, ADDR: 13, ACC: , DR: \u0000, DA: 13}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 24 - Opcode: je
+  DEBUG    root:machine.py:46 Executing control flow instruction: je at PC: 24
+  DEBUG    root:machine.py:66 JE condition not met. Incrementing PC.
+  DEBUG    root:machine.py:24 {{TICK: 583, PC: 25, ADDR: 13, ACC: , DR: \u0000, DA: 13}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 583, PC: 25, ADDR: 13, ACC: , DR: \u0000, DA: 13}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 25 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 25
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 584, PC: 25, ADDR: 127, ACC: , DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 127.
+  INFO     root:data_path.py:136 New output detected at address 127: 
+  INFO     root:data_path.py:139 OUTPUT: ['H', 'e', 'l', 'l', 'o', ',', ' ', 'r', 'a', 'h', 'i', 'm', '', '', '', '', '', '', '', '']
+  DEBUG    root:machine.py:24 {{TICK: 585, PC: 25, ADDR: 127, ACC: , DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:24 {{TICK: 586, PC: 26, ADDR: 127, ACC: , DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 586, PC: 26, ADDR: 127, ACC: , DR: \u0000, DA: 127}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 26 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 26
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 587, PC: 26, ADDR: 125, ACC: , DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 588, PC: 26, ADDR: 125, ACC: 13, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 589, PC: 27, ADDR: 125, ACC: 13, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 589, PC: 27, ADDR: 125, ACC: 13, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 27 - Opcode: inc
+  DEBUG    root:machine.py:46 Executing control flow instruction: inc at PC: 27
+  DEBUG    root:machine.py:24 {{TICK: 590, PC: 27, ADDR: 125, ACC: 13, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 591, PC: 27, ADDR: 125, ACC: 14, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 592, PC: 28, ADDR: 125, ACC: 14, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 592, PC: 28, ADDR: 125, ACC: 14, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 28 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 28
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 593, PC: 28, ADDR: 125, ACC: 14, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 125.
+  DEBUG    root:machine.py:24 {{TICK: 594, PC: 28, ADDR: 125, ACC: 14, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 595, PC: 29, ADDR: 125, ACC: 14, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 595, PC: 29, ADDR: 125, ACC: 14, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 29 - Opcode: jmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: jmp at PC: 29
+  DEBUG    root:machine.py:54 JMP to address: 22
+  DEBUG    root:machine.py:24 {{TICK: 596, PC: 22, ADDR: 125, ACC: 14, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 596, PC: 22, ADDR: 125, ACC: 14, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 22 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 22
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: indirect
+  DEBUG    root:machine.py:24 {{TICK: 597, PC: 22, ADDR: 125, ACC: 14, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 598, PC: 22, ADDR: 125, ACC: 14, DR: 14, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 599, PC: 22, ADDR: 14, ACC: 14, DR: 14, DA: 14}}
+  DEBUG    root:machine.py:24 {{TICK: 600, PC: 22, ADDR: 14, ACC: , DR: 14, DA: 14}}
+  DEBUG    root:machine.py:24 {{TICK: 601, PC: 23, ADDR: 14, ACC: , DR: 14, DA: 14}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 601, PC: 23, ADDR: 14, ACC: , DR: 14, DA: 14}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 23 - Opcode: cmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: cmp at PC: 23
+  DEBUG    root:machine.py:24 {{TICK: 602, PC: 23, ADDR: 14, ACC: , DR: \u0000, DA: 14}}
+  DEBUG    root:machine.py:24 {{TICK: 603, PC: 23, ADDR: 14, ACC: , DR: \u0000, DA: 14}}
+  DEBUG    root:machine.py:24 {{TICK: 604, PC: 24, ADDR: 14, ACC: , DR: \u0000, DA: 14}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 604, PC: 24, ADDR: 14, ACC: , DR: \u0000, DA: 14}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 24 - Opcode: je
+  DEBUG    root:machine.py:46 Executing control flow instruction: je at PC: 24
+  DEBUG    root:machine.py:66 JE condition not met. Incrementing PC.
+  DEBUG    root:machine.py:24 {{TICK: 605, PC: 25, ADDR: 14, ACC: , DR: \u0000, DA: 14}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 605, PC: 25, ADDR: 14, ACC: , DR: \u0000, DA: 14}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 25 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 25
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 606, PC: 25, ADDR: 127, ACC: , DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 127.
+  INFO     root:data_path.py:136 New output detected at address 127: 
+  INFO     root:data_path.py:139 OUTPUT: ['H', 'e', 'l', 'l', 'o', ',', ' ', 'r', 'a', 'h', 'i', 'm', '', '', '', '', '', '', '', '', '']
+  DEBUG    root:machine.py:24 {{TICK: 607, PC: 25, ADDR: 127, ACC: , DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:24 {{TICK: 608, PC: 26, ADDR: 127, ACC: , DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 608, PC: 26, ADDR: 127, ACC: , DR: \u0000, DA: 127}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 26 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 26
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 609, PC: 26, ADDR: 125, ACC: , DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 610, PC: 26, ADDR: 125, ACC: 14, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 611, PC: 27, ADDR: 125, ACC: 14, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 611, PC: 27, ADDR: 125, ACC: 14, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 27 - Opcode: inc
+  DEBUG    root:machine.py:46 Executing control flow instruction: inc at PC: 27
+  DEBUG    root:machine.py:24 {{TICK: 612, PC: 27, ADDR: 125, ACC: 14, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 613, PC: 27, ADDR: 125, ACC: 15, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 614, PC: 28, ADDR: 125, ACC: 15, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 614, PC: 28, ADDR: 125, ACC: 15, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 28 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 28
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 615, PC: 28, ADDR: 125, ACC: 15, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 125.
+  DEBUG    root:machine.py:24 {{TICK: 616, PC: 28, ADDR: 125, ACC: 15, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 617, PC: 29, ADDR: 125, ACC: 15, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 617, PC: 29, ADDR: 125, ACC: 15, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 29 - Opcode: jmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: jmp at PC: 29
+  DEBUG    root:machine.py:54 JMP to address: 22
+  DEBUG    root:machine.py:24 {{TICK: 618, PC: 22, ADDR: 125, ACC: 15, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 618, PC: 22, ADDR: 125, ACC: 15, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 22 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 22
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: indirect
+  DEBUG    root:machine.py:24 {{TICK: 619, PC: 22, ADDR: 125, ACC: 15, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 620, PC: 22, ADDR: 125, ACC: 15, DR: 15, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 621, PC: 22, ADDR: 15, ACC: 15, DR: 15, DA: 15}}
+  DEBUG    root:machine.py:24 {{TICK: 622, PC: 22, ADDR: 15, ACC: , DR: 15, DA: 15}}
+  DEBUG    root:machine.py:24 {{TICK: 623, PC: 23, ADDR: 15, ACC: , DR: 15, DA: 15}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 623, PC: 23, ADDR: 15, ACC: , DR: 15, DA: 15}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 23 - Opcode: cmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: cmp at PC: 23
+  DEBUG    root:machine.py:24 {{TICK: 624, PC: 23, ADDR: 15, ACC: , DR: \u0000, DA: 15}}
+  DEBUG    root:machine.py:24 {{TICK: 625, PC: 23, ADDR: 15, ACC: , DR: \u0000, DA: 15}}
+  DEBUG    root:machine.py:24 {{TICK: 626, PC: 24, ADDR: 15, ACC: , DR: \u0000, DA: 15}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 626, PC: 24, ADDR: 15, ACC: , DR: \u0000, DA: 15}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 24 - Opcode: je
+  DEBUG    root:machine.py:46 Executing control flow instruction: je at PC: 24
+  DEBUG    root:machine.py:66 JE condition not met. Incrementing PC.
+  DEBUG    root:machine.py:24 {{TICK: 627, PC: 25, ADDR: 15, ACC: , DR: \u0000, DA: 15}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 627, PC: 25, ADDR: 15, ACC: , DR: \u0000, DA: 15}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 25 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 25
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 628, PC: 25, ADDR: 127, ACC: , DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 127.
+  INFO     root:data_path.py:136 New output detected at address 127: 
+  INFO     root:data_path.py:139 OUTPUT: ['H', 'e', 'l', 'l', 'o', ',', ' ', 'r', 'a', 'h', 'i', 'm', '', '', '', '', '', '', '', '', '', '']
+  DEBUG    root:machine.py:24 {{TICK: 629, PC: 25, ADDR: 127, ACC: , DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:24 {{TICK: 630, PC: 26, ADDR: 127, ACC: , DR: \u0000, DA: 127}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 630, PC: 26, ADDR: 127, ACC: , DR: \u0000, DA: 127}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 26 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 26
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 631, PC: 26, ADDR: 125, ACC: , DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 632, PC: 26, ADDR: 125, ACC: 15, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 633, PC: 27, ADDR: 125, ACC: 15, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 633, PC: 27, ADDR: 125, ACC: 15, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 27 - Opcode: inc
+  DEBUG    root:machine.py:46 Executing control flow instruction: inc at PC: 27
+  DEBUG    root:machine.py:24 {{TICK: 634, PC: 27, ADDR: 125, ACC: 15, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 635, PC: 27, ADDR: 125, ACC: 16, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 636, PC: 28, ADDR: 125, ACC: 16, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 636, PC: 28, ADDR: 125, ACC: 16, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 28 - Opcode: st
+  DEBUG    root:machine.py:46 Executing control flow instruction: st at PC: 28
+  DEBUG    root:machine.py:155 Executing ST instruction. Address mode: direct
+  DEBUG    root:machine.py:24 {{TICK: 637, PC: 28, ADDR: 125, ACC: 16, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:160 Stored accumulator data into memory at address 125.
+  DEBUG    root:machine.py:24 {{TICK: 638, PC: 28, ADDR: 125, ACC: 16, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 639, PC: 29, ADDR: 125, ACC: 16, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 639, PC: 29, ADDR: 125, ACC: 16, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 29 - Opcode: jmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: jmp at PC: 29
+  DEBUG    root:machine.py:54 JMP to address: 22
+  DEBUG    root:machine.py:24 {{TICK: 640, PC: 22, ADDR: 125, ACC: 16, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 640, PC: 22, ADDR: 125, ACC: 16, DR: \u0000, DA: 125}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 22 - Opcode: ld
+  DEBUG    root:machine.py:46 Executing control flow instruction: ld at PC: 22
+  DEBUG    root:machine.py:132 Executing LD instruction. Address mode: indirect
+  DEBUG    root:machine.py:24 {{TICK: 641, PC: 22, ADDR: 125, ACC: 16, DR: \u0000, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 642, PC: 22, ADDR: 125, ACC: 16, DR: 16, DA: 125}}
+  DEBUG    root:machine.py:24 {{TICK: 643, PC: 22, ADDR: 16, ACC: 16, DR: 16, DA: 16}}
+  DEBUG    root:machine.py:24 {{TICK: 644, PC: 22, ADDR: 16, ACC: \u0000, DR: 16, DA: 16}}
+  DEBUG    root:machine.py:24 {{TICK: 645, PC: 23, ADDR: 16, ACC: \u0000, DR: 16, DA: 16}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 645, PC: 23, ADDR: 16, ACC: \u0000, DR: 16, DA: 16}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 23 - Opcode: cmp
+  DEBUG    root:machine.py:46 Executing control flow instruction: cmp at PC: 23
+  DEBUG    root:machine.py:24 {{TICK: 646, PC: 23, ADDR: 16, ACC: \u0000, DR: \u0000, DA: 16}}
+  DEBUG    root:machine.py:24 {{TICK: 647, PC: 23, ADDR: 16, ACC: \u0000, DR: \u0000, DA: 16}}
+  DEBUG    root:machine.py:24 {{TICK: 648, PC: 24, ADDR: 16, ACC: \u0000, DR: \u0000, DA: 16}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 648, PC: 24, ADDR: 16, ACC: \u0000, DR: \u0000, DA: 16}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 24 - Opcode: je
+  DEBUG    root:machine.py:46 Executing control flow instruction: je at PC: 24
+  DEBUG    root:machine.py:62 JE condition met. Jumping to address: 30
+  DEBUG    root:machine.py:24 {{TICK: 649, PC: 30, ADDR: 16, ACC: \u0000, DR: \u0000, DA: 16}}
+  DEBUG    root:machine.py:266 Control Unit state: {TICK: 649, PC: 30, ADDR: 16, ACC: \u0000, DR: \u0000, DA: 16}
+  DEBUG    root:machine.py:124 Decoding instruction at PC: 30 - Opcode: hlt
+  DEBUG    root:machine.py:46 Executing control flow instruction: hlt at PC: 30
+  DEBUG    root:machine.py:49 HLT instruction encountered. Halting execution.
+  DEBUG    root:machine.py:268 Program halted.
+  DEBUG    root:machine.py:275 Program finished. Output buffer contents: Hello, rahim
