@@ -1,0 +1,204 @@
+{
+    "instructions": [
+        {
+            "opcode": "ld",
+            "curr_addr": 0,
+            "addr": 0,
+            "addr_mode": "direct"
+        },
+        {
+            "opcode": "st",
+            "curr_addr": 1,
+            "addr": "CUR_ADR",
+            "addr_mode": "direct"
+        },
+        {
+            "opcode": "ld",
+            "curr_addr": 2,
+            "addr": "IN_ADR",
+            "addr_mode": "indirect"
+        },
+        {
+            "opcode": "cmp",
+            "curr_addr": 3,
+            "addr": ".",
+            "addr_mode": "immediate"
+        },
+        {
+            "opcode": "je",
+            "curr_addr": 4,
+            "addr": 10
+        },
+        {
+            "opcode": "st",
+            "curr_addr": 5,
+            "addr": "CUR_ADR",
+            "addr_mode": "indirect"
+        },
+        {
+            "opcode": "ld",
+            "curr_addr": 6,
+            "addr": "CUR_ADR",
+            "addr_mode": "direct"
+        },
+        {
+            "opcode": "inc",
+            "curr_addr": 7
+        },
+        {
+            "opcode": "st",
+            "curr_addr": 8,
+            "addr": "CUR_ADR",
+            "addr_mode": "direct"
+        },
+        {
+            "opcode": "jmp",
+            "curr_addr": 9,
+            "addr": 2
+        },
+        {
+            "opcode": "ld",
+            "curr_addr": 10,
+            "addr": 17,
+            "addr_mode": "direct"
+        },
+        {
+            "opcode": "st",
+            "curr_addr": 11,
+            "addr": "CUR_ADR",
+            "addr_mode": "direct"
+        },
+        {
+            "opcode": "ld",
+            "curr_addr": 12,
+            "addr": "CUR_ADR",
+            "addr_mode": "indirect"
+        },
+        {
+            "opcode": "cmp",
+            "curr_addr": 13,
+            "addr": "\u0000",
+            "addr_mode": "immediate"
+        },
+        {
+            "opcode": "je",
+            "curr_addr": 14,
+            "addr": 20
+        },
+        {
+            "opcode": "st",
+            "curr_addr": 15,
+            "addr": "OUT_ADR",
+            "addr_mode": "direct"
+        },
+        {
+            "opcode": "ld",
+            "curr_addr": 16,
+            "addr": "CUR_ADR",
+            "addr_mode": "direct"
+        },
+        {
+            "opcode": "inc",
+            "curr_addr": 17
+        },
+        {
+            "opcode": "st",
+            "curr_addr": 18,
+            "addr": "CUR_ADR",
+            "addr_mode": "direct"
+        },
+        {
+            "opcode": "jmp",
+            "curr_addr": 19,
+            "addr": 12
+        },
+        {
+            "opcode": "ld",
+            "curr_addr": 20,
+            "addr": 0,
+            "addr_mode": "direct"
+        },
+        {
+            "opcode": "st",
+            "curr_addr": 21,
+            "addr": "CUR_ADR",
+            "addr_mode": "direct"
+        },
+        {
+            "opcode": "ld",
+            "curr_addr": 22,
+            "addr": "CUR_ADR",
+            "addr_mode": "indirect"
+        },
+        {
+            "opcode": "cmp",
+            "curr_addr": 23,
+            "addr": "\u0000",
+            "addr_mode": "immediate"
+        },
+        {
+            "opcode": "je",
+            "curr_addr": 24,
+            "addr": 30
+        },
+        {
+            "opcode": "st",
+            "curr_addr": 25,
+            "addr": "OUT_ADR",
+            "addr_mode": "direct"
+        },
+        {
+            "opcode": "ld",
+            "curr_addr": 26,
+            "addr": "CUR_ADR",
+            "addr_mode": "direct"
+        },
+        {
+            "opcode": "inc",
+            "curr_addr": 27
+        },
+        {
+            "opcode": "st",
+            "curr_addr": 28,
+            "addr": "CUR_ADR",
+            "addr_mode": "direct"
+        },
+        {
+            "opcode": "jmp",
+            "curr_addr": 29,
+            "addr": 22
+        },
+        {
+            "opcode": "hlt",
+            "curr_addr": 30
+        }
+    ],
+    "data": [
+        1,
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "\u0000",
+        18,
+        "H",
+        "e",
+        "l",
+        "l",
+        "o",
+        ",",
+        " ",
+        "\u0000"
+    ]
+}

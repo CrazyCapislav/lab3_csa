@@ -116,10 +116,10 @@ out_log: |
   DEBUG    root:translator.py:48 Parser finished. AST generated.
   DEBUG    root:translator.py:52 AST saved to ast_output.txt.
   DEBUG    root:translator.py:58 Code generation finished.
-  DEBUG    root:translator.py:63 Unified JSON saved to /tmp/fixed_test_dir\output_compiler.json.
-  DEBUG    root:translator.py:69 Memory configuration saved to /tmp/fixed_test_dir\output_compiler_memory.json and output_instructions.json.
+  DEBUG    root:translator.py:63 Unified JSON saved to /tmp/fixed_test_dir/output_compiler.json.
+  DEBUG    root:translator.py:69 Memory configuration saved to /tmp/fixed_test_dir/output_compiler_memory.json and output_instructions.json.
   DEBUG    root:translator.py:75 Translation process completed.
-  INFO     root:data_path.py:36 Загрузка данных из файла: /tmp/fixed_test_dir\output_compiler_memory.json
+  INFO     root:data_path.py:36 Загрузка данных из файла: /tmp/fixed_test_dir/output_compiler_memory.json
   INFO     root:data_path.py:49 Начинаем инициализацию памяти...
   INFO     root:data_path.py:58 Memory[125] initialized with CUR_ADR (125)
   INFO     root:data_path.py:61 Memory[126] initialized with IN_ADR (126)
