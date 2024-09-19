@@ -1,7 +1,0 @@
-Program:
-  Assign(var=username, var_type=STRING_TYPE)
-    FunctionCall(input)
-  Print:
-    String("Hello, ")
-  Print:
-    Identifier(username)
