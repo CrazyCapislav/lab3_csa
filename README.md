@@ -137,7 +137,7 @@
 ## Модель процессора
 Реализован в [machine](./machine.py)
 ### Схема
-![data_path.png](./model/data_path.png)  ![cu.png](./model/cu.png)
+![data_path.png](./model/data_path.png)  ![CU.png](./model/cu.png)
 
 Control Unit:
 - Моделирование на уровне тактов
